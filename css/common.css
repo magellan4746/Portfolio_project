@@ -1,0 +1,149 @@
+:root{
+    /* 디바이스별 글씨 크기 */
+    --fs-pc:16px;
+    --fs-pad:14px;
+    --fs-mo:12px;
+    
+    /* 행간 */
+    --lh1:1.2;
+    --lh2:1.45;
+    
+    /* 태그 글씨 크기 */
+    --fs-h4:1.25rem;
+    --fs-h3:1.5625rem;
+    --fs-h2:1.9531rem;
+    --fs-h1:2.4414rem;
+    --fs-body1:1rem;
+    --fs-body2:0.85rem;
+    --fs-detail:0.7225rem;
+    
+    /* 글씨 두께 */
+    --fw1:400;
+    --fw2:700;
+
+    /* 여백 */
+    --space-3x-large:6rem;
+    --space-2x-large:3rem;
+    --space-x-large:2rem;
+    --space-normal:1rem;
+    --space-x-small:0.5rem;
+    --space-2x-small:0.25rem;
+
+
+    /* 색상 */
+    --navy-0:#8794A8;
+    --navy-100:#7B8CA7;
+    --navy-200:#6F84A4;
+    --navy-300:#657CA1;
+    --navy-400:#5B739B;
+    --navy-500:#526B93;
+    --navy-600:#496289;
+    --navy-700:#40577C;
+    --navy-800:#374C6E;
+    --navy-900:#2F415E;
+    
+    
+    /* 그레이컬러 */
+    --black-0:#FFFFFF;    
+    --black-100:#FAFAFA;    
+    --black-200:#F2F2F2;    
+    --black-300:#E4E4E4;    
+    --black-400:#D1D1D1;    
+    --black-500:#B6B6B6;    
+    --black-600:#949494;    
+    --black-700:#686868;    
+    --black-800:#353535;    
+    --black-900:#000000;    
+
+    /* 브랜드컬러 */
+    --point-skyblue:#00EEFC;
+    --point-blue:#3FA8FF;
+    --point-margenta:#FF50A8;
+    --bg-black:#0D0D0D;
+    
+    /* 서브컬러 */
+    --red:#F94848;
+}
+html{
+    font-size: var(--fs-pc);
+    font-family: 'Pretendard','A2z',sans-serif;
+    font-weight: var(--fw1);
+    color: var(--black-0);
+}
+main{
+    margin-top: 154px;
+
+}
+.en{
+    font-family: 'A2z';
+}
+.common-frame{
+    padding: 0 var(--space-2x-large);
+}
+
+.pc{display: block;}
+.tab{display: none;}
+.mo{display: none;}
+
+
+h1{
+    font-size: var(--fs-h1);
+    font-weight: var(--fw2);
+}
+h2{font-size: var(--fs-h2);}
+h3{font-size: var(--fs-h3);}
+h4{font-size: var(--fs-h4);}
+p{line-height: var(--lh2);}
+
+.title {
+    text-align: center;
+    color: var(--gray-800);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.title span {
+    width: 5rem;
+    height: 0.125rem;
+    background-color: var(--navy-600);
+}
+main>section{
+    padding: var(--space-2x-large);
+}
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 1rem;
+}
+@media (max-width:1024px){
+    main{
+        margin-top: 5rem;
+    }
+    .pc{display: none;}
+    .tab{display: block;}
+    .mo{display: none;}
+
+    html{
+        font-size: var(--fs-pad);
+    }
+    .common-frame{
+        padding: 0 var(--space-x-large);
+    }
+}
+
+@media (max-width:768px){
+    .pc{display: none;}
+    .tab{display: none;}
+    .mo{display: block;}
+    html{
+        font-size: var(--fs-mo);
+    }
+    .common-frame{
+        padding: 0 var(--space-normal);
+    }
+    .grid-list {
+            grid-template-columns: repeat(2,minmax(50px,1fr));
+    }
+}
