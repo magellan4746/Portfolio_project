@@ -60,6 +60,8 @@
     --point-blue:#3FA8FF;
     --point-margenta:#FF50A8;
     --bg-black:#0D0D0D;
+    --bg-gray:#ECECEC;
+
     
     /* 서브컬러 */
     --red:#F94848;
@@ -68,7 +70,8 @@ html{
     font-size: var(--fs-pc);
     font-family: 'Pretendard','A2z',sans-serif;
     font-weight: var(--fw1);
-    color: var(--black-0);
+    color: var(--black-800);
+    background-color: var(--bg-gray);
 }
 main{
     margin-top: 154px;
