@@ -1,11 +1,69 @@
-.con1>.en{
+.hero-banner>.en{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 6rem;
 
 }
+.hero-banner>div {
+    width: 100%;
+    height: 500px;
+    
+}
+
+/* 사이트 전역에 고정되는, 이미지 레퍼런스의 기술적 여백감을 차용한 장식 */
+.cyber-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    color: #0d4151;
+    opacity: .5;
+    transition: opacity .7s ease, filter .7s ease;
+}
+.cyber-backdrop.is-muted {
+    opacity: .18;
+    filter: saturate(.65);
+}
+.cyber-grid {
+    position: absolute;
+    inset: 0;
+    opacity: .28;
+    background-image: linear-gradient(rgba(0, 107, 128, .12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 107, 128, .12) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+}
+.cyber-code {
+    position: absolute;
+    margin: 0;
+    font: 700 10px/1.2 "Courier New", monospace;
+    letter-spacing: .16em;
+    color: #07576b;
+}
+.code-top { top: 21%; left: 8%; animation: signal-shift 7s ease-in-out infinite; }
+.code-side { right: -47px; top: 51%; transform: rotate(90deg); opacity: .72; }
+.code-bottom { bottom: 10%; left: 18%; color: #9d2463; }
+.cyber-ring { position: absolute; border: 1px solid currentColor; border-radius: 50%; }
+.ring-one { width: 33vw; height: 33vw; max-width: 480px; max-height: 480px; right: -11vw; top: 9%; color: rgba(0, 125, 150, .55); animation: orbit-drift 12s ease-in-out infinite; }
+.ring-two { width: 13vw; height: 13vw; min-width: 130px; min-height: 130px; left: 11%; bottom: 13%; color: rgba(255, 80, 168, .5); animation: orbit-drift 9s ease-in-out infinite reverse; }
+.cyber-line { position: absolute; background: currentColor; }
+.line-one { width: 20vw; height: 1px; right: 9%; top: 34%; color: #00a6bd; transform: rotate(-28deg); transform-origin: right; }
+.line-two { width: 1px; height: 24vh; left: 29%; bottom: -4%; color: #e1589c; }
+.cyber-square { position: absolute; width: 20px; height: 20px; border: 2px solid currentColor; }
+.square-one { right: 21%; top: 23%; color: #00a6bd; animation: pulse-mark 2.4s steps(2) infinite; }
+.square-two { left: 37%; bottom: 23%; width: 10px; height: 10px; color: #e1589c; }
+.cyber-cross { position: absolute; left: 7%; bottom: 23%; font: 300 50px/1 Arial; color: #00a6bd; animation: pulse-mark 3s ease-in-out infinite; }
+.hero-banner__label { position: absolute; right: 8vw; bottom: 11vh; display: flex; align-items: center; gap: 1rem; color: var(--black-800); font-family: "Courier New", monospace; letter-spacing: .14em; }
+.hero-banner__label span { font-size: .65rem; }
+.hero-banner__label strong { font-size: 2rem; font-weight: 400; color: var(--point-margenta); }
+.main-con { position: relative; z-index: 1; min-height: 80vh; }
+@keyframes orbit-drift { 50% { transform: translate3d(-12px, 16px, 0) rotate(10deg); } }
+@keyframes signal-shift { 50% { transform: translateX(14px); opacity: .35; } }
+@keyframes pulse-mark { 50% { opacity: .25; transform: scale(.72); } }
+@media (prefers-reduced-motion: reduce) { .cyber-backdrop *, .hero-banner__label { animation: none !important; } }
+@media (max-width: 768px) { .cyber-grid { background-size: 40px 40px; } .code-side { display: none; } .ring-one { width: 60vw; height: 60vw; right: -22vw; } .hero-banner__label { right: 1rem; bottom: 8vh; } }
 .ryoiki{
     width: 100%;
-    /* height: 828px; */
+    height: 900px;
 }
