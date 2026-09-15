@@ -22,3 +22,28 @@
 .header-btn>ul {
     gap: 10rem;
 }
+
+@media(max-width:1024px) {
+    .header-btn>ul {
+        gap: 6rem;
+    }
+    .header-logo>img, .header-dotsicn>img{
+        height: 2rem;
+    }
+}
+@media(max-width:768px) {
+    .header-btn>ul {
+        gap: 4rem;
+    }
+    .header-logo>img, .header-dotsicn>img{
+        height: 1.8rem;
+    }
+}
+@media(max-width:402px) {
+    .header-btn>ul {
+        gap: 3rem;
+    }
+    .header-logo>img,.header-dotsicn>img{
+        height: 1rem;
+    }
+}
