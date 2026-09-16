@@ -5,7 +5,6 @@
     margin: 0 auto;
 }
 .con1-about-me{
-    margin-top: 7rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--black-800);
     margin-bottom: 3rem;
@@ -18,22 +17,21 @@
 }
 
 .con1-text-main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
     gap: 3rem;
     padding: 3rem 0;
 }
 
 .text-contain-left {
-    text-align: right;
+    text-align: center;
     font-size: 3rem;
     font-weight: var(--fw2);
 }
 
 .text-contain-right {
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

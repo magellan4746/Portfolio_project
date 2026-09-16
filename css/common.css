@@ -20,7 +20,7 @@
     /* 글씨 두께 */
     --fw1:400;
     --fw2:700;
-    --fw3:900;
+    --fw3:800;
 
     /* 여백 */
     --space-3x-large:6rem;
@@ -75,7 +75,7 @@ html{
     background-color: var(--bg-gray);
 }
 main{
-    margin-top: 154px;
+    margin-top: 2rem;
 
 }
 .en{
