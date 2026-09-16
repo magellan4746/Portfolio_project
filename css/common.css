@@ -20,6 +20,7 @@
     /* 글씨 두께 */
     --fw1:400;
     --fw2:700;
+    --fw3:900;
 
     /* 여백 */
     --space-3x-large:6rem;
@@ -80,6 +81,7 @@ main{
 .en{
     font-family: 'A2z';
 }
+
 .common-frame{
     padding: 0 var(--space-2x-large);
 }
@@ -89,14 +91,15 @@ main{
 .mo{display: none;}
 
 
-h1{
-    font-size: var(--fs-h1);
-    font-weight: var(--fw2);
-}
+h1{font-size: var(--fs-h1);}
 h2{font-size: var(--fs-h2);}
 h3{font-size: var(--fs-h3);}
 h4{font-size: var(--fs-h4);}
 p{line-height: var(--lh2);}
+
+h1, h2, h3, h4{
+    font-weight: var(--fw2);
+} 
 
 .title {
     text-align: center;
