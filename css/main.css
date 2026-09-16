@@ -1,8 +1,15 @@
 .con1 {
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
     width: 72%;
     margin: 0 auto;
+}
+.con1-profile{
+    height: 5rem;
+}
+.con1-profile-wrap{
+    position: sticky;
+    top: 10rem;
 }
 .con1-about-me{
     padding-bottom: 3rem;
@@ -10,7 +17,7 @@
     margin-bottom: 3rem;
 }
 .con1-about-me>h2 {
-    text-align: center;
+    text-align: left;
     font-weight: var(--fw2);
     font-size: 2rem;
     margin: 3rem 0;
@@ -25,13 +32,13 @@
 }
 
 .text-contain-left {
-    text-align: center;
+    text-align: left;
     font-size: 3rem;
     font-weight: var(--fw2);
 }
 
 .text-contain-right {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
