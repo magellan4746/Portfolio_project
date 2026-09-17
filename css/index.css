@@ -29,6 +29,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .reveal-on-scroll,
     .reveal-on-scroll.is-visible {
         visibility: visible;
@@ -65,26 +66,7 @@ body {
     color: #333;
 }
 
-.con2-imgs .swiper-button-next,
-.con2-imgs .swiper-button-prev {
-    width: 2rem;
-    height: 2rem;
-}
 
-.con2-imgs .swiper-button-next::after,
-.con2-imgs .swiper-button-prev::after {
-    font-size: 1.25rem;
-}
-
-.con2-imgs .swiper-pagination-bullet {
-    width: 0.5rem;
-    height: 0.5rem;
-}
-
-.con2-imgs .swiper-pagination-bullet-active {
-    width: 1rem;
-    border-radius: 99px;
-}
 
 
 .con1 {
@@ -203,13 +185,14 @@ body {
     align-items: center;
     gap: 0.5rem;
 }
-.con-title-wrap>p{
+
+.con-title-wrap>p {
     font-size: 1.2rem;
 }
 
 .con2-list {
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
     justify-content: center;
@@ -218,19 +201,133 @@ body {
 }
 
 .list-wrap {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     width: auto;
-    background-color: rgba(50, 49, 51, 0.051);
+    background:
+        linear-gradient(115deg, rgba(0, 238, 252, 0.08), transparent 38%),
+        linear-gradient(295deg, rgba(255, 80, 168, 0.07), transparent 44%),
+        rgba(50, 49, 51, 0.051);
     padding: 3rem;
-    backdrop-filter: blur(1px);
+    border: 1px solid rgba(0, 151, 173, 0.2);
+    box-shadow: inset 0 0 36px rgba(0, 238, 252, 0.06);
+    backdrop-filter: blur(2px);
 }
 
-.con2-imgs,
+.list-wrap> :not(.hologram-ui) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Decorative hologram layer: it remains at 20% opacity and never captures input. */
+.hologram-ui {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.2;
+    color: rgb(26, 96, 105);
+    transform: translate3d(var(--holo-x, 0px), var(--holo-y, 0px), 0);
+    transition: transform 0.35s ease-out;
+}
+
+.hologram-ui::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 175, 194, 0.26) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 173, 194, 0.58) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(115deg, transparent 2%, #000 28%, #000 70%, transparent 98%);
+}
+
+.hologram-ui::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid currentColor;
+    clip-path: polygon(0 0, 12% 0, 12% 2px, 88% 2px, 88% 0, 100% 0, 100% 22%, calc(100% - 2px) 22%, calc(100% - 2px) 78%, 100% 78%, 100% 100%, 88% 100%, 88% calc(100% - 2px), 12% calc(100% - 2px), 12% 100%, 0 100%, 0 78%, 2px 78%, 2px 22%, 0 22%);
+}
+
+.hologram-ui__code {
+    position: absolute;
+    margin: 0;
+    font: 700 clamp(0.5rem, 0.7vw, 0.65rem)/1.4 "Courier New", monospace;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 8px currentColor;
+    white-space: nowrap;
+}
+
+.hologram-ui__code--top {
+    top: 1.3rem;
+    left: 2rem;
+}
+
+.hologram-ui__code--bottom {
+    right: 2rem;
+    bottom: 1.3rem;
+    color: #5f0a32;
+}
+
+.hologram-ui__node,
+.hologram-ui__ring {
+    position: absolute;
+    border: 1px solid currentColor;
+}
+
+.hologram-ui__node {
+    top: 26%;
+    right: 8%;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 14px currentColor;
+}
+
+.hologram-ui__ring {
+    bottom: -5rem;
+    left: -4rem;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hologram-ui {
+        transform: none;
+        transition: none;
+    }
+}
+
 .con2-imgs {
     position: relative;
     overflow: hidden;
+    height: auto;
 }
 
+.con2-imgs .swiper-button-next,
+.con2-imgs .swiper-button-prev {
+    width: 2rem;
+    height: 2rem;
+}
 
+.con2-imgs .swiper-button-next::after,
+.con2-imgs .swiper-button-prev::after {
+    font-size: 1.25rem;
+}
+
+.con2-imgs .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.con2-imgs .swiper-pagination-bullet-active {
+    width: 1rem;
+    border-radius: 99px;
+}
 
 .con2-imgs .swiper-button-prev {
     left: 1rem;
@@ -296,4 +393,46 @@ body {
 .con2-page-list>li>h4 {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+
+@media(max-width:1024px) {
+    .con1-card-wrap {
+        gap: 1.5rem 3rem;
+    }
+
+    .con1-text-sub-wrap {
+        gap: 1.5rem;
+    }
+
+    .con2-list {
+        width: 80%;
+    }
+}
+
+@media(max-width:768px) {
+    .con1-card-wrap {
+        gap: 1rem 2rem;
+    }
+
+    .con1-text-sub-wrap {
+        gap: 1rem;
+    }
+    .con2-page-list{
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
+@media(max-width:402px) {
+    .con1-card-wrap {
+        gap: 0.5rem 1rem;
+    }
+
+    .con1-text-sub-wrap {
+        gap: 0.6rem;
+    }
+    .con2-list {
+        width: 100%;
+    }
 }
