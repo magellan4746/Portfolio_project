@@ -93,6 +93,9 @@
 
     </div>
     <main>
+        <section class="intro">
+            
+        </section>
         <section class="con1">
             <div class="con1-profile">
                 <div class="con1-profile-wrap">
@@ -293,21 +296,25 @@
         </section>
         <section class="con2">
             <div class="con2-popup">
-                <div class="con2-title">
+                <div class="con-title">
                     <h2 class="en">Popup Designs</h2>
                     <p class="en">Clear Messages, Designed to Engage</p>
                     <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
                 </div>
-                <div class="con2-list-wrap">
+                <div class="list-wrap">
                     <div class="con2-list">
                         <div class="con2-expl">
                             <div class="con2-expl-wrap con-on">
-                                <h3>팝업 디자인 제목</h3>
-                                <p>팝업 디자인 설명</p>
+                                <h3>투썸플레이스 메뉴 팝업 디자인</h3>
+                                <p>봄 시즌 신메뉴를 홍보하는 가상의 투썸플레이스 팝업 광고입니다.
+                                    복숭아와 벚꽃을 활용한 핑크·코랄 톤의 비주얼로 계절감과 산뜻한 음료의 이미지를 표현하고, 제품과 메뉴 정보를 직관적으로 배치해 실제 프로모션 광고의
+                                    형태로 디자인했습니다.</p>
                             </div>
                             <div class="con2-expl-wrap">
-                                <h3>팝업 디자인 제목2</h3>
-                                <p>팝업 디자인 설명2</p>
+                                <h3>올리브영 올영세일 팝업 디자인</h3>
+                                <p>올리브영의 가상 뷰티 기획전을 홍보하는 팝업 광고입니다.
+                                    골드와 옐로우 컬러를 중심으로 화사하고 프리미엄한 분위기를 연출했으며, 다양한 스킨케어 제품과 최대 50% 할인 혜택을 직관적으로 배치해 프로모션의
+                                    주목도를 높였습니다.</p>
                             </div>
                             <div class="con2-expl-wrap">
                                 <h3>팝업 디자인 제목3</h3>
@@ -333,7 +340,7 @@
 
                         <script>
                             const popupExplains = document.querySelectorAll(
-                                '.con2-popup-list-wrap .con2-expl-wrap'
+                                '.con2-list-wrap .con2-expl-wrap'
                             );
 
                             const popupSwiper = new Swiper('.con2-popup-imgs', {
@@ -345,11 +352,11 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-popup-imgs .swiper-button-next',
-                                    prevEl: '.con2-popup-imgs .swiper-button-prev',
+                                    nextEl: '.con2-imgs .swiper-button-next',
+                                    prevEl: '.con2-imgs .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-popup-imgs .swiper-pagination',
+                                    el: '.con2-imgs .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
@@ -365,12 +372,12 @@
                 </div>
             </div>
             <div class="con2-poster">
-                <div class="con2-title">
+                <div class="con-title">
                     <h2 class="en">Poster Designs</h2>
                     <p class="en">Visual Ideas, Made to Stand Out</p>
                     <p>하나의 화면 안에서 주제와 메시지가 효과적으로 전달될 수 있도록 레이아웃과 이미지, 타이포그래피의 균형을 고민했습니다.</p>
                 </div>
-                <div class="con2-list-wrap">
+                <div class="list-wrap">
                     <div class="con2-list">
                         <div class="swiper con2-imgs con2-poster-imgs">
                             <div class="swiper-wrapper">
@@ -417,11 +424,11 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-poster-imgs .swiper-button-next',
-                                    prevEl: '.con2-poster-imgs .swiper-button-prev',
+                                    nextEl: '.con2-imgs .swiper-button-next',
+                                    prevEl: '.con2-imgs .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-poster-imgs .swiper-pagination',
+                                    el: '.con2-imgs .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
@@ -437,12 +444,12 @@
                 </div>
             </div>
             <div class="con2-banner">
-                <div class="con2-title">
+                <div class="con-title">
                     <h2 class="en">Banner Designs</h2>
                     <p class="en">Designed to Capture Attention</p>
                     <p>제한된 공간 안에서 필요한 정보를 빠르게 전달할 수 있도록 콘텐츠의 구조와 시각적 흐름을 중심으로 디자인했습니다.</p>
                 </div>
-                <div class="con2-list-wrap">
+                <div class="list-wrap">
                     <div class="swiper con2-imgs">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="./img/img-banner-cloth.jpg" alt="배너디자인이미지"></div>
@@ -477,12 +484,12 @@
                 </div>
             </div>
             <div class="con2-product-page">
-                <div class="con2-title">
+                <div class="con-title">
                     <h2 class="en">Product Page Designs</h2>
                     <p class="en">From Information to Experience</p>
                     <p>제품의 특징과 정보를 체계적으로 정리하고, 사용자가 자연스럽게 내용을 이해하고 구매까지 이어질 수 있도록 구성했습니다.</p>
                 </div>
-                <div class="con2-list-wrap">
+                <div class="list-wrap">
                     <ul class="con2-page-list">
                         <li>
                             <h4>헤드셋 상세페이지 디자인</h4>
@@ -502,8 +509,23 @@
                 </div>
         </section>
         <section class="con3">
-            <div></div>
-            <div></div>
+            <div class="con3-shopping-mall">
+                <div class="con-title">
+                    <h2 class="en">Shopping mall Project</h2>
+                    <p class="en">Clear Messages, Designed to Engage</p>
+                    <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
+                </div>
+                <div class="shopping-mall">
+
+                </div>
+            </div>
+            <div class="con3-team-project">
+                 <div class="con-title">
+                    <h2 class="en">Team Project - Geulgil Homepage</h2>
+                    <p class="en">Clear Messages, Designed to Engage</p>
+                    <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
+                </div>
+            </div>
         </section>
     </main>
 
