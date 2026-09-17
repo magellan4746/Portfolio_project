@@ -46,13 +46,13 @@
                 </div>
                 <div class="header-btn">
                     <ul>
-                        <a href="#">
+                        <a href="#about-me">
                             <li>ABOUT</li>
                         </a>
-                        <a href="#">
+                        <a href="#work">
                             <li>WORK</li>
                         </a>
-                        <a href="#">
+                        <a href="#project">
                             <li>PROJECT</li>
                         </a>
                     </ul>
@@ -96,7 +96,7 @@
         <section class="intro">
             
         </section>
-        <section class="con1">
+        <section class="con1" id="about-me">
             <div class="con1-profile">
                 <div class="con1-profile-wrap">
                     <div class="prf-img">
@@ -294,11 +294,13 @@
                 </div>
             </div>
         </section>
-        <section class="con2">
+        <section class="con2" id="work">
             <div class="con2-popup">
                 <div class="con-title">
-                    <h2 class="en">Popup Designs</h2>
-                    <p class="en">Clear Messages, Designed to Engage</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Popup Designs</h2>
+                        <p class="en">Clear Messages, Designed to Engage</p>
+                    </div>
                     <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
                 </div>
                 <div class="list-wrap">
@@ -339,8 +341,25 @@
                         </div>
 
                         <script>
+                            // 화면에 보이는 슬라이더만 자동 재생합니다.
+                            function observeSwiperAutoplay(swiper) {
+                                if (!swiper?.autoplay || !swiper?.el) return;
+
+                                const observer = new IntersectionObserver((entries) => {
+                                    entries.forEach((entry) => {
+                                        if (entry.isIntersecting) {
+                                            swiper.autoplay.start();
+                                        } else {
+                                            swiper.autoplay.stop();
+                                        }
+                                    });
+                                }, { threshold: 0.1 });
+
+                                observer.observe(swiper.el);
+                            }
+
                             const popupExplains = document.querySelectorAll(
-                                '.con2-list-wrap .con2-expl-wrap'
+                                '.con2-popup .con2-expl-wrap'
                             );
 
                             const popupSwiper = new Swiper('.con2-popup-imgs', {
@@ -367,14 +386,18 @@
                                     }
                                 }
                             });
+
+                            observeSwiperAutoplay(popupSwiper);
                         </script>
                     </div>
                 </div>
             </div>
             <div class="con2-poster">
                 <div class="con-title">
-                    <h2 class="en">Poster Designs</h2>
-                    <p class="en">Visual Ideas, Made to Stand Out</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Poster Designs</h2>
+                        <p class="en">Visual Ideas, Made to Stand Out</p>
+                    </div>
                     <p>하나의 화면 안에서 주제와 메시지가 효과적으로 전달될 수 있도록 레이아웃과 이미지, 타이포그래피의 균형을 고민했습니다.</p>
                 </div>
                 <div class="list-wrap">
@@ -439,14 +462,18 @@
                                     }
                                 }
                             });
+
+                            observeSwiperAutoplay(posterpSwiper);
                         </script>
                     </div>
                 </div>
             </div>
             <div class="con2-banner">
                 <div class="con-title">
-                    <h2 class="en">Banner Designs</h2>
-                    <p class="en">Designed to Capture Attention</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Banner Designs</h2>
+                        <p class="en">Designed to Capture Attention</p>
+                    </div>
                     <p>제한된 공간 안에서 필요한 정보를 빠르게 전달할 수 있도록 콘텐츠의 구조와 시각적 흐름을 중심으로 디자인했습니다.</p>
                 </div>
                 <div class="list-wrap">
@@ -463,7 +490,7 @@
                         <div class="swiper-pagination"></div>
                     </div>
                     <script>
-                        var swiper = new Swiper('.con2-imgs', {
+                        var swiper = new Swiper('.con2-banner .con2-imgs', {
                             effect: 'fade',
                             loop: true,
                             autoplay: {
@@ -480,13 +507,17 @@
                                 clickable: true,
                             },
                         });
+
+                        observeSwiperAutoplay(swiper);
                     </script>
                 </div>
             </div>
             <div class="con2-product-page">
                 <div class="con-title">
-                    <h2 class="en">Product Page Designs</h2>
-                    <p class="en">From Information to Experience</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Product Page Designs</h2>
+                        <p class="en">From Information to Experience</p>
+                    </div>
                     <p>제품의 특징과 정보를 체계적으로 정리하고, 사용자가 자연스럽게 내용을 이해하고 구매까지 이어질 수 있도록 구성했습니다.</p>
                 </div>
                 <div class="list-wrap">
@@ -508,12 +539,14 @@
                     </ul>
                 </div>
         </section>
-        <section class="con3">
+        <section class="con3" id="project">
             <div class="con3-shopping-mall">
                 <div class="con-title">
-                    <h2 class="en">Shopping mall Project</h2>
-                    <p class="en">Clear Messages, Designed to Engage</p>
-                    <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Shopping Mall Project</h2>
+                        <p class="en">Responsive Web Works</p>
+                    </div>
+                    <p>다양한 디바이스 환경에서도 유연하도록 설계하고, 어디서나 자연스랍고 일관된 사용자 경험을 하도록 디자인 하였습니다.</p>
                 </div>
                 <div class="shopping-mall">
 
@@ -521,8 +554,10 @@
             </div>
             <div class="con3-team-project">
                  <div class="con-title">
-                    <h2 class="en">Team Project - Geulgil Homepage</h2>
-                    <p class="en">Clear Messages, Designed to Engage</p>
+                    <div class="con-title-wrap">
+                        <h2 class="en">Team Project - Geulgil Homepage</h2>
+                        <p class="en">Responsive Web Team Project Works</p>
+                    </div>
                     <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
                 </div>
             </div>

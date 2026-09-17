@@ -62,7 +62,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
-    padding: 0 3rem;
+    padding: 5rem 3rem;
     margin: 0 auto;
     height: auto;
 }
@@ -86,7 +86,7 @@ body {
 .con1-about-me {
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--black-800);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .con1-about-me>h2 {
@@ -129,7 +129,7 @@ body {
 
 .con1-text-sub h4 {
     font-weight: var(--fw2);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .ex-bold {
@@ -159,14 +159,23 @@ body {
     font-weight: var(--fw1);
 }
 
-.con-title{
+.con-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
-    margin-top: 5rem;
-    padding: 0 3rem;
+    margin-bottom: 1rem;
+    padding: 5rem 3rem 0;
+}
+
+.con-title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.con-title-wrap>p{
+    font-size: 1.2rem;
 }
 
 .con2-list {
@@ -189,7 +198,8 @@ body {
 .con2-imgs,
 .con2-imgs {
     position: relative;
-    overflow: hidden;}
+    overflow: hidden;
+}
 
 
 
@@ -248,11 +258,13 @@ body {
     align-items: center;
     text-align: left;
 }
-.con2-page-list{
+
+.con2-page-list {
     display: flex;
     gap: 2rem;
 }
-.con2-page-list>li>h4{
+
+.con2-page-list>li>h4 {
     text-align: center;
     margin-bottom: 1rem;
 }
