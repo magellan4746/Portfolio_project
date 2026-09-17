@@ -101,7 +101,7 @@
                     </div>
                     <div class="prf-caption">
                         <p>성대한</p>
-                        <p>UI UX 디자이너</p>
+                        <p><b>UI/UX 디자이너</b></p>
                     </div>
                 </div>
             </div>
@@ -295,109 +295,193 @@
             <div class="con2-popup">
                 <div class="con2-title">
                     <h2 class="en">Popup Designs</h2>
-                    <p class="en">sub title</p>
-                    <p>한국어 설명</p>
+                    <p class="en">Clear Messages, Designed to Engage</p>
+                    <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
                 </div>
-                <div class="con2-popup-list">
-                    <div class="con2-expl">
-                        <div class="con2-expl-wrap">
-                            <h3>팝업 디자인 제목</h3>
-                            <p>팝업 디자인 설명</p>
+                <div class="con2-list-wrap">
+                    <div class="con2-list">
+                        <div class="con2-expl">
+                            <div class="con2-expl-wrap con-on">
+                                <h3>팝업 디자인 제목</h3>
+                                <p>팝업 디자인 설명</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>팝업 디자인 제목2</h3>
+                                <p>팝업 디자인 설명2</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>팝업 디자인 제목3</h3>
+                                <p>팝업 디자인 설명3</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>팝업 디자인 제목4</h3>
+                                <p>팝업 디자인 설명4</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper con2-popup-imgs">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="./img/img-popup-twosome.jpg" alt="팝업디자인이미지"></div>
-                            <div class="swiper-slide"><img src="./img/img-popup-oliveyoung.jpg" alt="팝업디자인이미지"></div>
-                            <div class="swiper-slide"><img src="./img/img-popup-nike-sale.jpg" alt="팝업디자인이미지"></div>
-                            <div class="swiper-slide"><img src="./img/img-popup-netflix.jpg" alt="팝업디자인이미지"></div>
+                        <div class="swiper con2-imgs con2-popup-imgs">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./img/img-popup-twosome.jpg" alt="팝업디자인이미지"></div>
+                                <div class="swiper-slide"><img src="./img/img-popup-oliveyoung.jpg" alt="팝업디자인이미지">
+                                </div>
+                                <div class="swiper-slide"><img src="./img/img-popup-nike-sale.jpg" alt="팝업디자인이미지"></div>
+                                <div class="swiper-slide"><img src="./img/img-popup-netflix.jpg" alt="팝업디자인이미지"></div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
+
+                        <script>
+                            const popupExplains = document.querySelectorAll(
+                                '.con2-popup-list-wrap .con2-expl-wrap'
+                            );
+
+                            const popupSwiper = new Swiper('.con2-popup-imgs', {
+                                effect: 'fade',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,             // 3초마다 전환
+                                    disableOnInteraction: false, // 드래그한 뒤에도 자동 재생 유지
+                                    pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
+                                },
+                                navigation: {
+                                    nextEl: '.con2-popup-imgs .swiper-button-next',
+                                    prevEl: '.con2-popup-imgs .swiper-button-prev',
+                                },
+                                pagination: {
+                                    el: '.con2-popup-imgs .swiper-pagination',
+                                    clickable: true,
+                                },
+                                on: {
+                                    slideChange: function () {
+                                        popupExplains.forEach((expl, index) => {
+                                            expl.classList.toggle('con-on', index === this.realIndex);
+                                        });
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
-                    <script>
-                        var swiper = new Swiper('.con2-popup-imgs', {
-                            effect: 'fade',
-                            navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            },
-                            pagination: {
-                                el: '.swiper-pagination',
-                                clickable: true,
-                            },
-                        });
-                    </script>
                 </div>
             </div>
             <div class="con2-poster">
                 <div class="con2-title">
                     <h2 class="en">Poster Designs</h2>
-                    <p class="en">sub title</p>
-                    <p>한국어 설명</p>
+                    <p class="en">Visual Ideas, Made to Stand Out</p>
+                    <p>하나의 화면 안에서 주제와 메시지가 효과적으로 전달될 수 있도록 레이아웃과 이미지, 타이포그래피의 균형을 고민했습니다.</p>
                 </div>
-                <div class="con2-poster-list">
-                    <div class="swiper con2-poster-imgs">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="./img/img-poster-drg.jpg" alt="포스터디자인이미지"></div>
-                            <div class="swiper-slide"><img src="./img/img-poster-shoes.jpg" alt="포스터디자인이미지"></div>
-                            <div class="swiper-slide"><img src="./img/img-poster-gaming_mouse.jpg" alt="포스터디자인이미지">
+                <div class="con2-list-wrap">
+                    <div class="con2-list">
+                        <div class="swiper con2-imgs con2-poster-imgs">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./img/img-poster-drg.jpg" alt="포스터디자인이미지"></div>
+                                <div class="swiper-slide"><img src="./img/img-poster-shoes.jpg" alt="포스터디자인이미지"></div>
+                                <div class="swiper-slide"><img src="./img/img-poster-gaming_mouse.jpg" alt="포스터디자인이미지">
+                                </div>
+                                <div class="swiper-slide"><img src="./img/img-poster-furniture.jpg" alt="포스터디자인이미지">
+                                </div>
                             </div>
-                            <div class="swiper-slide"><img src="./img/img-poster-furniture.jpg" alt="포스터디자인이미지"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-                    <script>
-                        var swiper = new Swiper('.con2-poster-imgs', {
-                            effect: 'fade',
-                            navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            },
-                            pagination: {
-                                el: '.swiper-pagination',
-                                clickable: true,
-                            },
-                        });
-                    </script>
-                    <div class="con2-expl">
-                        <div class="con2-expl-wrap">
-                            <h3>포스터 디자인 제목</h3>
-                            <p>포스터 디자인 설명</p>
+                        <div class="con2-expl">
+                            <div class="con2-expl-wrap con-on">
+                                <h3>포스터 디자인 제목</h3>
+                                <p>포스터 디자인 설명</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>포스터 디자인 제목2</h3>
+                                <p>포스터 디자인 설명2</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>포스터 디자인 제목3</h3>
+                                <p>포스터 디자인 설명3</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>포스터 디자인 제목4</h3>
+                                <p>포스터 디자인 설명4</p>
+                            </div>
                         </div>
+                        <script>
+                            const posterExplains = document.querySelectorAll(
+                                '.con2-poster .con2-expl-wrap'
+                            );
+
+                            const posterpSwiper = new Swiper('.con2-poster-imgs', {
+                                effect: 'fade',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,             // 3초마다 전환
+                                    disableOnInteraction: false, // 드래그한 뒤에도 자동 재생 유지
+                                    pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
+                                },
+                                navigation: {
+                                    nextEl: '.con2-poster-imgs .swiper-button-next',
+                                    prevEl: '.con2-poster-imgs .swiper-button-prev',
+                                },
+                                pagination: {
+                                    el: '.con2-poster-imgs .swiper-pagination',
+                                    clickable: true,
+                                },
+                                on: {
+                                    slideChange: function () {
+                                        posterExplains.forEach((expl, index) => {
+                                            expl.classList.toggle('con-on', index === this.realIndex);
+                                        });
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
             <div class="con2-banner">
                 <div class="con2-title">
                     <h2 class="en">Banner Designs</h2>
-                    <p class="en">sub title</p>
-                    <p>한국어 설명</p>
+                    <p class="en">Designed to Capture Attention</p>
+                    <p>제한된 공간 안에서 필요한 정보를 빠르게 전달할 수 있도록 콘텐츠의 구조와 시각적 흐름을 중심으로 디자인했습니다.</p>
                 </div>
-                <div class="swiper con2-banner-imgs">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="./img/img-banner-cloth.jpg" alt="배너디자인이미지"></div>
-                        <div class="swiper-slide"><img src="./img/img-banner-chicken.jpg" alt="배너디자인이미지"></div>
-                        <div class="swiper-slide"><img src="./img/img-banner-trip.jpg" alt="배너디자인이미지"></div>
-                        <div class="swiper-slide"><img src="./img/img-banner-game_character.jpg" alt="배너디자인이미지"></div>
+                <div class="con2-list-wrap">
+
+                    <div class="swiper con2-imgs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./img/img-banner-cloth.jpg" alt="배너디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-banner-chicken.jpg" alt="배너디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-banner-trip.jpg" alt="배너디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-banner-game_character.jpg" alt="배너디자인이미지">
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <script>
+                        var swiper = new Swiper('.con2-imgs', {
+                            effect: 'fade',
+                            loop: true,
+                            autoplay: {
+                                delay: 3000,             // 3초마다 전환
+                                disableOnInteraction: false, // 드래그한 뒤에도 자동 재생 유지
+                                pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
+                            },
+                            navigation: {
+                                nextEl: '.con2-banner .swiper-button-next',
+                                prevEl: '.con2-banner .swiper-button-prev',
+                            },
+                            pagination: {
+                                el: '.con2-banner .swiper-pagination',
+                                clickable: true,
+                            },
+                        });
+                    </script>
                 </div>
-                <script>
-                    var swiper = new Swiper('.con2-banner-imgs', {
-                        effect: 'fade',
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true,
-                        },
-                    });
-                </script>
             </div>
             <div class="con2-product-page">
                 <div class="con2-title">
                     <h2 class="en">Product Page Designs</h2>
-                    <p class="en">sub title</p>
-                    <p>한국어 설명</p>
+                    <p class="en">From Information to Experience</p>
+                    <p>제품의 특징과 정보를 체계적으로 정리하고, 사용자가 자연스럽게 내용을 이해하고 구매까지 이어질 수 있도록 구성했습니다.</p>
                 </div>
         </section>
     </main>
