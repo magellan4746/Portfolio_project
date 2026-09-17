@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/main.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/index.js" defer></script>
     <script src="./js/main.js"></script>
@@ -144,7 +147,8 @@
                         <div class="text-contain-right">
                             <h3>툴을 사용하는 것을 넘어,목적을 담아 디자인합니다.</h3>
                             <p>단순히 디자인 툴을 사용하는 것에 그치지 않고, 콘텐츠의 목적과 사용자 경험을 고려해 디자인을 구성합니다.</p>
-                            <p>Figma를 활용한 UI 디자인부터 Photoshop·Illustrator를 활용한 그래픽 제작, HTML/CSS 기반의 웹 구현까지 작업할 수 있습니다.</p>
+                            <p>Figma를 활용한 UI 디자인부터 Photoshop·Illustrator를 활용한 그래픽 제작, HTML/CSS 기반의 웹 구현까지 작업할 수 있습니다.
+                            </p>
                         </div>
                     </div>
                     <div class="con1-card-wrap">
@@ -295,16 +299,33 @@
                     <p>한국어 설명</p>
                 </div>
                 <div class="con2-popup-list">
-                    <div class="con2-popup-expl">
-                        <h3>팝업 디자인 제목</h3>
-                        <p>팝업 디자인 설명</p>
+                    <div class="con2-expl">
+                        <div class="con2-expl-wrap">
+                            <h3>팝업 디자인 제목</h3>
+                            <p>팝업 디자인 설명</p>
+                        </div>
                     </div>
-                    <div class="con2-popup-imgs">
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
+                    <div class="swiper con2-popup-imgs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./img/img-popup-twosome.jpg" alt="팝업디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-popup-oliveyoung.jpg" alt="팝업디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-popup-nike-sale.jpg" alt="팝업디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-popup-netflix.jpg" alt="팝업디자인이미지"></div>
+                        </div>
                     </div>
+                    <script>
+                        var swiper = new Swiper('.con2-popup-imgs', {
+                            effect: 'fade',
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                            },
+                        });
+                    </script>
                 </div>
             </div>
             <div class="con2-poster">
@@ -313,15 +334,35 @@
                     <p class="en">sub title</p>
                     <p>한국어 설명</p>
                 </div>
-                <div class="con2-poster-imgs">
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
+                <div class="con2-poster-list">
+                    <div class="swiper con2-poster-imgs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./img/img-poster-drg.jpg" alt="포스터디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-poster-shoes.jpg" alt="포스터디자인이미지"></div>
+                            <div class="swiper-slide"><img src="./img/img-poster-gaming_mouse.jpg" alt="포스터디자인이미지">
+                            </div>
+                            <div class="swiper-slide"><img src="./img/img-poster-furniture.jpg" alt="포스터디자인이미지"></div>
+                        </div>
                     </div>
-                <div class="con2-poster-expl">
-                    <h3>포스터 디자인 제목</h3>
-                    <p>포스터 디자인 설명</p>
+                    <script>
+                        var swiper = new Swiper('.con2-poster-imgs', {
+                            effect: 'fade',
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                            },
+                        });
+                    </script>
+                    <div class="con2-expl">
+                        <div class="con2-expl-wrap">
+                            <h3>포스터 디자인 제목</h3>
+                            <p>포스터 디자인 설명</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="con2-banner">
@@ -330,19 +371,34 @@
                     <p class="en">sub title</p>
                     <p>한국어 설명</p>
                 </div>
-                <div class="con2-banner-imgs">
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
-                        <figure><img src="" alt=""></figure>
+                <div class="swiper con2-banner-imgs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./img/img-banner-cloth.jpg" alt="배너디자인이미지"></div>
+                        <div class="swiper-slide"><img src="./img/img-banner-chicken.jpg" alt="배너디자인이미지"></div>
+                        <div class="swiper-slide"><img src="./img/img-banner-trip.jpg" alt="배너디자인이미지"></div>
+                        <div class="swiper-slide"><img src="./img/img-banner-game_character.jpg" alt="배너디자인이미지"></div>
                     </div>
+                </div>
+                <script>
+                    var swiper = new Swiper('.con2-banner-imgs', {
+                        effect: 'fade',
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                    });
+                </script>
             </div>
             <div class="con2-product-page">
                 <div class="con2-title">
                     <h2 class="en">Product Page Designs</h2>
                     <p class="en">sub title</p>
                     <p>한국어 설명</p>
-            </div>
+                </div>
         </section>
     </main>
 
