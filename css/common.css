@@ -100,7 +100,6 @@ p{line-height: var(--lh2);}
 
 h1, h2, h3, h4{
     font-weight: var(--fw2);
-    text-align: center;
 } 
 
 .title {
