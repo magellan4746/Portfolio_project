@@ -67,13 +67,20 @@ body {
 }
 
 
+.l-title {
+    padding: 5rem 3rem;
+    text-align: center;
+}
 
+.l-title>h1 {
+    font-size: 5rem;
+}
 
 .con1 {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
-    padding: 5rem 3rem;
+    padding: 0 3rem;
     margin: 0 auto;
     height: auto;
 }
@@ -158,11 +165,13 @@ body {
     flex-direction: column;
     gap: 1rem;
 }
-.skill-title{
+
+.skill-title {
     display: flex;
-    gap:1rem;
+    gap: 1rem;
 }
-.skill-title img{
+
+.skill-title img {
     height: 100%;
 }
 
@@ -176,13 +185,16 @@ body {
     font-weight: var(--fw1);
 }
 
+
 .con-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 1rem;
-    padding: 5rem 3rem 0;
+
+    margin-bottom: 3rem;
+    padding: 0 3rem;
+    text-align: center;
 }
 
 .con-title-wrap {
@@ -190,11 +202,18 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    text-align: center;
 }
 
 .con-title-wrap>p {
     font-size: 1.2rem;
+    text-align: center;
+}
+
+.con2-popup,
+.con2-poster,
+.con2-banner,
+.con2--product-page {
+    margin-bottom: 3rem;
 }
 
 .con2-list {
@@ -407,7 +426,7 @@ body {
 
 @media(max-width:1024px) {
     .con1-card-wrap {
-        
+
         gap: 3rem;
     }
 
@@ -421,12 +440,13 @@ body {
 }
 
 @media(max-width:768px) {
-    .list-wrap{
+    .list-wrap {
         padding: 1rem;
     }
+
     .con1-card-wrap {
         grid-template-columns: repeat(1, 1fr);
-        gap: 2rem;
+        gap: 4rem;
     }
 
     .con1-text-sub-wrap {
@@ -435,11 +455,11 @@ body {
         gap: 3rem;
     }
 
-    .con2-page-list{
+    .con2-page-list {
         flex-direction: column;
         gap: 5rem;
     }
-    
+
 }
 
 @media(max-width:402px) {
@@ -450,6 +470,7 @@ body {
     .con1-text-sub-wrap {
         gap: 0.6rem;
     }
+
     .con2-list {
         width: 100%;
     }
