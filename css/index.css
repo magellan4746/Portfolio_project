@@ -13,7 +13,7 @@ body {
 .reveal-on-scroll {
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-3rem);
+    transform: translateX(var(--reveal-offset-x, -3rem));
     transition:
         opacity 0.65s ease,
         transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
@@ -443,6 +443,10 @@ body {
 }
 
 @media(max-width:768px) {
+    .con1 {
+        --reveal-offset-x: -1rem;
+    }
+
     .list-wrap {
         padding: 1rem;
     }
