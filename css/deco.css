@@ -378,13 +378,6 @@
         height: 52vw !important;
     }
 
-    .hero-data--right,
-    .hero-data--right-secondary,
-    .hero-coordinate,
-    .hero-data--left {
-        display: none;
-    }
-
     .hero-data--top {
         left: 10vw;
         top: 21vh;
@@ -621,17 +614,6 @@
 @media (max-width: 768px) {
     .cyber-grid {
         background-size: 40px 40px;
-    }
-
-    .code-side {
-        display: none;
-    }
-
-    .code-center--two,
-    .code-center--four,
-    .code-center--six,
-    .code-center--seven {
-        display: none;
     }
 
     .ring-one {
