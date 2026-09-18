@@ -228,7 +228,7 @@
 
 .hero-data--left {
     left: 7vw;
-    bottom: 22vh;
+    bottom: -32vh;
     color: #a52a69;
     writing-mode: vertical-rl;
 }
@@ -446,8 +446,8 @@
 }
 
 .code-side {
-    right: -47px;
-    top: 51%;
+    right: -60vh;
+    top: 72%;
     transform: rotate(90deg);
     opacity: .72;
 }
@@ -643,3 +643,45 @@
     translate: var(--index-x, 0px) var(--index-y, 0px);
     will-change: translate;
 }
+
+/* Keep each decorative code panel fixed while its text is being replaced. */
+.code-top {
+    animation: none;
+}
+.code-side {
+    width: 290px;
+    transform-origin: right center;
+    white-space: nowrap;
+}
+.hero-data--left,
+.hero-data--right {
+    height: 270px !important;
+    white-space: nowrap;
+}
+.hero-coordinate {
+    width: 170px !important;
+}
+.header-code {
+    width: 230px;
+    white-space: nowrap;
+}
+
+/* Terminal-style cursor for code that is being typed. */
+.js-cycling-code,
+.hero-data,
+.hero-coordinate span,
+.hero-status span {
+    position: relative;
+}
+.js-cycling-code.is-typing::after,
+.hero-data.is-typing::after,
+.hero-coordinate span.is-typing::after,
+.hero-status span.is-typing::after {
+    content: "_";
+    display: inline-block;
+    margin-left: .14em;
+    color: currentColor;
+    animation: code-cursor .65s steps(2) infinite;
+}
+@keyframes code-cursor { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .is-typing::after { animation: none; } }

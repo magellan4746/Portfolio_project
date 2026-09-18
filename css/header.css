@@ -16,6 +16,19 @@
 }
 .header-top>.common-frame{
     height: 100%;
+    position: relative;
+}
+
+.header-code {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+    color: rgba(0, 238, 252, .8);
+    font: 700 .55rem/1 "Courier New", monospace;
+    letter-spacing: .14em;
+    white-space: nowrap;
 }
 
 .header-top>.common-frame,
@@ -31,6 +44,7 @@
 }
 
 @media(max-width:1024px) {
+    .header-code { display: none; }
     .header-btn>ul {
         gap: 6rem;
     }

@@ -1,4 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const codeSets = {
+        system: ['// SYSTEM : ONLINE  01.01.0101', '// CORE : STABLE  0xA11C', '// MEMORY : CLEAR  98.4%'],
+        interface: ['NEON_INTERFACE / PORTFOLIO / 2024', 'DESIGN_MATRIX / CHANNEL_07', 'UI.ARCHIVE / SESSION_ACTIVE'],
+        signal: ['[ VISUAL_SIGNAL ]  00FFFC  // SYNCHRONIZED', '[ CORE_SIGNAL ]  FF50A8  // CONNECTED', '[ DATA_STREAM ]  0xCAFE  // RUNNING'],
+        header: ['LINK://CORE_01 / ONLINE', 'SYNC://VISUAL_07 / READY', 'NODE://SEOUL_00 / LIVE'],
+        heroTop: ['SYS.CORE_01 / VISUAL PROTOCOL', 'DESIGN.OS / LAYER ACTIVE', 'INTERFACE / SIGNAL SCAN'],
+        binary: ['01001100 01001111 01000001 01000100', '11001010 00110110 10101100 01010011', '00110010 11100001 01001110 10011001'],
+        coordinate: ['LAT 37.5665° / LAYER_00 / ACTIVE', 'GRID 127.0246° / NODE_07 / LINK', 'SECTOR_01 / DEPTH_03 / SCANNING'],
+        pixel: ['PX / 2304', 'RGB / 00FFFC', 'BIT / 101010'],
+        frame: ['FRAME 001', 'FRAME 028', 'FRAME 064'],
+        node: ['SEOUL_NODE', 'CORE_NODE', 'VISUAL_NODE'],
+        status: ['SYSTEM READY', 'SIGNAL LOCKED', 'LINK ESTABLISHED']
+    };
+
+    const codeTargets = [...document.querySelectorAll('.js-cycling-code')].map((element) => ({ element, group: element.dataset.codeGroup }));
+    const addCodeTarget = (selector, group) => {
+        const element = document.querySelector(selector);
+        if (element) codeTargets.push({ element, group });
+    };
+    addCodeTarget('.hero-data--top', 'heroTop');
+    addCodeTarget('.hero-data--left', 'binary');
+    addCodeTarget('.hero-data--right', 'coordinate');
+    addCodeTarget('.hero-data--bottom', 'signal');
+    addCodeTarget('.hero-coordinate span:nth-child(1)', 'pixel');
+    addCodeTarget('.hero-coordinate span:nth-child(2)', 'frame');
+    addCodeTarget('.hero-coordinate span:nth-child(3)', 'node');
+    addCodeTarget('.hero-status span', 'status');
+
+    let codeStep = 0;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const typeCode = (element, value, delay) => {
+        window.setTimeout(() => {
+            if (prefersReducedMotion) {
+                element.textContent = value;
+                return;
+            }
+
+            let characterIndex = 0;
+            element.textContent = '';
+            element.classList.add('is-typing');
+
+            const typeNextCharacter = () => {
+                element.textContent += value[characterIndex];
+                characterIndex += 1;
+                if (characterIndex < value.length) {
+                    window.setTimeout(typeNextCharacter, 22);
+                } else {
+                    element.classList.remove('is-typing');
+                }
+            };
+
+            typeNextCharacter();
+        }, delay);
+    };
+
+    const updateCyclingCodes = () => {
+        codeStep += 1;
+        codeTargets.forEach(({ element, group }, index) => {
+            const values = codeSets[group];
+            if (!values) return;
+            typeCode(element, values[(codeStep + index) % values.length], index * 85);
+        });
+    };
+    window.setInterval(updateCyclingCodes, 6200);
+
     const sections = document.querySelectorAll(
         '.l-title, .con1-profile, .con-about-me-wrap,.con1-profile-wrap, .con1-text-main, .text-contain-left, .text-contain-right, .con1-card-wrap, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page'
     );
