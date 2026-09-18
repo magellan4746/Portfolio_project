@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeSets = {
         system: ['// SYSTEM : ONLINE  01.01.0101', '// CORE : STABLE  0xA11C', '// MEMORY : CLEAR  98.4%'],
         interface: ['NEON_INTERFACE / PORTFOLIO / 2024', 'DESIGN_MATRIX / CHANNEL_07', 'UI.ARCHIVE / SESSION_ACTIVE'],
+        ambient: ['// RENDER_PIPELINE : INITIALIZED', '0x0F / VISUAL_NODE / STANDBY', 'GRID[12:08] :: SIGNAL DETECTED', 'MODULE.DESIGN / FRAME_READY', '// DATA_LINK : 2048kb/s', 'CORE::AESTHETIC / SYNC_100', '[ RX-07 ] CHANNEL OPEN'],
         signal: ['[ VISUAL_SIGNAL ]  00FFFC  // SYNCHRONIZED', '[ CORE_SIGNAL ]  FF50A8  // CONNECTED', '[ DATA_STREAM ]  0xCAFE  // RUNNING'],
         header: ['LINK://CORE_01 / ONLINE', 'SYNC://VISUAL_07 / READY', 'NODE://SEOUL_00 / LIVE'],
         heroTop: ['SYS.CORE_01 / VISUAL PROTOCOL', 'DESIGN.OS / LAYER ACTIVE', 'INTERFACE / SIGNAL SCAN'],
@@ -10,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         pixel: ['PX / 2304', 'RGB / 00FFFC', 'BIT / 101010'],
         frame: ['FRAME 001', 'FRAME 028', 'FRAME 064'],
         node: ['SEOUL_NODE', 'CORE_NODE', 'VISUAL_NODE'],
-        status: ['SYSTEM READY', 'SIGNAL LOCKED', 'LINK ESTABLISHED']
+        status: ['SYSTEM READY', 'SIGNAL LOCKED', 'LINK ESTABLISHED'],
+        rightChannel: ['CHANNEL_07 // CORE LINK // 0xB17E', 'UPLINK_03 // VISUAL SYNC // OK', 'PORT_8080 // DESIGN STREAM // LIVE']
     };
 
     const codeTargets = [...document.querySelectorAll('.js-cycling-code')].map((element) => ({ element, group: element.dataset.codeGroup }));
