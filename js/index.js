@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     const observer = new IntersectionObserver(updateReveal, {
-        threshold: 0.12
+        threshold: 0
     });
     // 긴 모바일 콘텐츠도 화면에 진입하면 표시하고, 완전히 벗어날 때 숨깁니다.
     const profileObserver = new IntersectionObserver(updateReveal, {

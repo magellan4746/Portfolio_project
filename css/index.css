@@ -455,10 +455,14 @@ body {
 
 
 @media(max-width:1024px) {
-    .con3-list {
-        gap: 3rem;
-        padding: 0 2rem;
+    .con1-profile {
+        position: sticky;
+        top: 5rem;
+        align-self: flex-start;
+        flex: 0 0 28%;
     }
+
+
 
     .con-title {
         gap: 2rem;
@@ -482,6 +486,11 @@ body {
 
     .con2-list {
         width: 80%;
+    }
+
+    .con3-list {
+        gap: 3rem;
+        padding: 0 2rem;
     }
 }
 
@@ -530,7 +539,8 @@ body {
         flex-direction: column;
         gap: 5rem;
     }
-    .con2-page-list a>img{
+
+    .con2-page-list a>img {
         width: 350px;
     }
 
@@ -553,7 +563,8 @@ body {
     .con2-list {
         width: 100%;
     }
-    .con2-page-list a>img{
+
+    .con2-page-list a>img {
         width: initial;
     }
 }

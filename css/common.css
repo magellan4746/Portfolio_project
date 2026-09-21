@@ -88,7 +88,7 @@ main{
 }
 
 .pc{display: block;}
-.tab{display: none;}
+.pad{display: none;}
 .mo1{display: none;}
 .mo2{display: none;}
 
@@ -128,7 +128,7 @@ h1, h2, h3, h4{
         margin-top: 5rem;
     }
     .pc{display: none;}
-    .tab{display: block;}
+    .pad{display: block;}
     .mo1{display: none;}
     .mo2{display: none;}
 
@@ -142,9 +142,10 @@ h1, h2, h3, h4{
 
 @media (max-width:768px){
     .pc{display: none;}
-    .tab{display: none;}
+    .pad{display: none;}
     .mo1{display: block;}
     .mo2{display: none;}
+    
     html{
         font-size: var(--fs-mo);
     }
@@ -157,7 +158,7 @@ h1, h2, h3, h4{
 }
 @media (max-width:402px){
     .pc{display: none;}
-    .tab{display: none;}
+    .pad{display: none;}
     .mo1{display: none;}
     .mo2{display: block;}
 }
