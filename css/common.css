@@ -89,7 +89,8 @@ main{
 
 .pc{display: block;}
 .tab{display: none;}
-.mo{display: none;}
+.mo1{display: none;}
+.mo2{display: none;}
 
 
 h1{font-size: var(--fs-h1);}
@@ -128,7 +129,8 @@ h1, h2, h3, h4{
     }
     .pc{display: none;}
     .tab{display: block;}
-    .mo{display: none;}
+    .mo1{display: none;}
+    .mo2{display: none;}
 
     html{
         font-size: var(--fs-pad);
@@ -141,7 +143,8 @@ h1, h2, h3, h4{
 @media (max-width:768px){
     .pc{display: none;}
     .tab{display: none;}
-    .mo{display: block;}
+    .mo1{display: block;}
+    .mo2{display: none;}
     html{
         font-size: var(--fs-mo);
     }
@@ -151,4 +154,10 @@ h1, h2, h3, h4{
     .grid-list {
             grid-template-columns: repeat(2,minmax(50px,1fr));
     }
+}
+@media (max-width:402px){
+    .pc{display: none;}
+    .tab{display: none;}
+    .mo1{display: none;}
+    .mo2{display: block;}
 }

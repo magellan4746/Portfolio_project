@@ -426,8 +426,51 @@ body {
     margin-bottom: 1rem;
 }
 
+.con3-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 3rem;
+    align-items: center;
+}
+
+.con3-expl-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-cap-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.con3-img a {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
 
 @media(max-width:1024px) {
+    .con3-list {
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+
+    .con-title {
+        gap: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    .list-wrap {
+        padding: 5rem 3rem;
+    }
+
     .con1-card-wrap {
 
         gap: 3rem;
@@ -442,13 +485,34 @@ body {
     }
 }
 
+
+
 @media(max-width:768px) {
+
+    .con-title {
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+
     .con1 {
+        flex-direction: column;
         --reveal-offset-x: -1rem;
     }
 
+    .con1-profile {
+        align-self: center;
+        margin: 3rem;
+        position: relative;
+        top: 2rem;
+    }
+
+    .prf-img>img {
+
+        width: 250px;
+    }
+
     .list-wrap {
-        padding: 1rem;
+        padding: 3rem 1rem;
     }
 
     .con1-card-wrap {
@@ -466,6 +530,14 @@ body {
         flex-direction: column;
         gap: 5rem;
     }
+    .con2-page-list a>img{
+        width: 350px;
+    }
+
+    .con3-list {
+        gap: 3rem;
+        padding: 0 2rem;
+    }
 
 }
 
@@ -480,5 +552,8 @@ body {
 
     .con2-list {
         width: 100%;
+    }
+    .con2-page-list a>img{
+        width: initial;
     }
 }
