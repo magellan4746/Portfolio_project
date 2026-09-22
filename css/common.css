@@ -73,6 +73,7 @@ html{
     font-weight: var(--fw1);
     color: var(--black-800);
     background-color: var(--bg-gray);
+    scroll-behavior: smooth;
 }
 main{
     margin-top: 2rem;
