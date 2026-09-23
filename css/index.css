@@ -112,7 +112,7 @@ body {
 
 
 .l-title {
-    padding: 5rem 3rem;
+    padding: 5rem 3rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
