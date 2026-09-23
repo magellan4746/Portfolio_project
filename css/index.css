@@ -513,12 +513,14 @@ body {
     font-size: 1.25rem;
 }
 
-.con2-imgs .swiper-pagination-bullet {
+.con2-imgs .swiper-pagination-bullet,
+.con2-banner-imgs .swiper-pagination-bullet {
     width: 0.5rem;
     height: 0.5rem;
 }
 
-.con2-imgs .swiper-pagination-bullet-active {
+.con2-imgs .swiper-pagination-bullet-active,
+.con2-banner-imgs .swiper-pagination-bullet-active {
     width: 1rem;
     border-radius: 99px;
 }
