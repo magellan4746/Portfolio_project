@@ -78,7 +78,15 @@ body {
 .l-title>h1 {
     font-size: 5rem;
 }
+.resume-btn{
+    margin-top: 0.5rem;
+    padding: 0.4rem 3rem;
+    background-color: #fff;
+    border: 1px solid rgb(73, 74, 85);
+    border-radius: 500px;
+    text-align: center;
 
+}
 .con1 {
     display: flex;
     align-items: flex-start;
@@ -195,7 +203,7 @@ body {
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.2rem;
     padding: 0 3rem;
     text-align: center;
 }
@@ -517,7 +525,7 @@ body {
     .con-title {
         gap: 2rem;
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         padding: 0 2rem;
     }
 
@@ -549,7 +557,7 @@ body {
 @media(max-width:768px) {
 
     .con-title {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         padding: 0 1rem;
     }
 
