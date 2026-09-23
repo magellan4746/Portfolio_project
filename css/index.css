@@ -122,7 +122,8 @@ body {
 .l-title>h1 {
     font-size: 5rem;
 }
-.resume-btn{
+
+.resume-btn {
     margin-top: 0.5rem;
     padding: 0.4rem 3rem;
     background-color: #fff;
@@ -131,6 +132,7 @@ body {
     text-align: center;
 
 }
+
 .con1 {
     display: flex;
     align-items: flex-start;
@@ -262,7 +264,8 @@ body {
     font-size: 1.2rem;
     text-align: center;
 }
-.btn-shortcut{
+
+.btn-shortcut {
     position: sticky;
     top: 3.5rem;
     z-index: 10;
@@ -271,7 +274,8 @@ body {
     gap: 1rem;
     margin-inline: 10rem;
 }
-.btn-shortcut a{
+
+.btn-shortcut a {
     flex: 1;
     min-width: 0;
     box-sizing: border-box;
@@ -284,8 +288,8 @@ body {
     backdrop-filter: blur(2px);
 }
 
-.con2 > [id],
-.con3 > [id] {
+.con2>[id],
+.con3>[id] {
     scroll-margin-top: 9rem;
 }
 
@@ -299,6 +303,7 @@ body {
         overflow-wrap: anywhere;
     }
 }
+
 .con2-popup,
 .con2-poster,
 .con2-banner,
@@ -552,6 +557,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .con2-page-list>li>a>img,
     .con2-page-list>li>a::after {
         transition: none;
@@ -589,7 +595,8 @@ body {
     gap: 2rem;
     align-items: center;
 }
-.con4-list{
+
+.con4-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -599,26 +606,32 @@ body {
     backdrop-filter: blur(1px);
     color: #fff;
 }
-.con4-list h1{
+
+.con4-list h1 {
     padding-top: 5rem;
     font-size: 5rem;
+    text-align: center;
 }
-.con4-address{
+
+.con4-address {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
-.con4-address-list{
+
+.con4-address-list {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     align-items: stretch;
 }
-.con4-address-list > li{
+
+.con4-address-list>li {
     min-width: 0;
 }
-.con4-address-list a{
+
+.con4-address-list a {
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -629,6 +642,7 @@ body {
     border-radius: 500px;
     text-align: center;
 }
+
 @media(max-width:1024px) {
     .con1-profile {
         position: sticky;
@@ -650,6 +664,10 @@ body {
         padding: 5rem 3rem;
     }
 
+    .btn-shortcut {
+        margin-inline: 8rem;
+    }
+
     .con1-card-wrap {
 
         gap: 3rem;
@@ -669,6 +687,11 @@ body {
     }
 }
 
+@media(max-width:940px){
+    .btn-shortcut {
+        margin-inline: 6rem;
+    }
+}
 
 
 @media(max-width:768px) {
@@ -741,5 +764,8 @@ body {
 
     .con2-page-list a>img {
         width: initial;
+    }
+    .btn-shortcut {
+        margin-inline: 1rem;
     }
 }

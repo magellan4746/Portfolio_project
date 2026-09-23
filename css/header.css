@@ -88,13 +88,13 @@
 }
 @media(max-width:768px) {
     .header-btn>ul {
-        gap: 0.5rem;
+        gap: 4rem;
     }
     
 }
 @media(max-width:402px) {
     .header-btn>ul {
-        gap: 0;
+        gap: 2rem;
     }
     
 }
