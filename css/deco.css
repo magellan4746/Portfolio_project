@@ -645,8 +645,8 @@
 @media (max-width: 768px) {
     .cyber-backdrop .code-center {
         position: absolute;
-        top: calc(clamp(80px, 12vh, 120px) + var(--code-row) * 8px);
-        /* left: 8vw; */
+        top: calc(clamp(150px, 60vh, 2200px) + var(--code-row) * 20px);
+        left: 17vw;
         width: min(260px, 90vw);
         opacity: .35;
     }
