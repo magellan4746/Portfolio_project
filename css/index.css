@@ -11,8 +11,8 @@ body {
 
 .scl-top-btn {
     position: fixed;
-    right: clamp(1rem, 3vw, 2rem);
-    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    right: clamp(1rem, 7vw, 2rem);
+    bottom: max(3.5rem, env(safe-area-inset-bottom));
     z-index: 101;
     display: grid;
     place-items: center;
