@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopButton = document.querySelector('.scl-top-btn');
+    const heroBanner = document.querySelector('.hero-banner');
+
+    if (scrollTopButton && heroBanner) {
+        const updateScrollTopButton = () => {
+            const isPastHero = heroBanner.getBoundingClientRect().bottom <= 0;
+            scrollTopButton.classList.toggle('is-active', isPastHero);
+            scrollTopButton.disabled = !isPastHero;
+        };
+
+        const heroObserver = new IntersectionObserver(updateScrollTopButton, {
+            threshold: 0
+        });
+        heroObserver.observe(heroBanner);
+        window.addEventListener('pageshow', updateScrollTopButton);
+        updateScrollTopButton();
+
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+            });
+        });
+    }
+
     const codeSets = {
         system: ['// SYSTEM : ONLINE  01.01.0101', '// CORE : STABLE  0xA11C', '// MEMORY : CLEAR  98.4%'],
         interface: ['NEON_INTERFACE / PORTFOLIO / 2024', 'DESIGN_MATRIX / CHANNEL_07', 'UI.ARCHIVE / SESSION_ACTIVE'],

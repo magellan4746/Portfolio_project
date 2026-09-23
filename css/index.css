@@ -9,6 +9,50 @@ body {
     padding: 0;
 }
 
+.scl-top-btn {
+    position: fixed;
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    z-index: 101;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: rgba(85, 85, 85, 0.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.scl-top-btn.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scl-top-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scl-top-btn {
+        transition: none;
+        transform: none;
+    }
+}
+
 /* main 섹션이 화면에 들어올 때만 표시하는 스크롤 모션 */
 .reveal-on-scroll {
     opacity: 0;
