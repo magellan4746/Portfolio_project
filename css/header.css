@@ -8,15 +8,16 @@
     background-color: rgba(27, 27, 27, 0.60);
     backdrop-filter: blur(5px);
 }
-.header-logo>a>img{
+.header-logo img{
     height: 1.2rem;
 }
-.header-top>.common-frame a{
-    height: 100%;
-}
+
 .header-top>.common-frame{
     height: 100%;
     position: relative;
+}
+.header-dotsicn>a img{
+    height: 1.2rem;
 }
 
 .header-code {
@@ -43,24 +44,57 @@
     gap: 10rem;
 }
 
+.header-btn,
+.header-btn > ul,
+.header-btn > ul > li,
+.header-dotsicn {
+    height: 100%;
+}
+
+.header-btn > ul > li > a,
+.header-top > .common-frame > a,
+.header-dotsicn > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header-top > .common-frame > a,
+.header-dotsicn {
+    flex-shrink: 0;
+}
+
+.header-dotsicn > a {
+    padding-inline: 1rem;
+    min-width: 48px;
+}
+
+.header-logo img,
+.header-dotsicn img {
+    display: block;
+}
+
+
 @media(max-width:1024px) {
     .header-code { display: none; }
     .header-btn>ul {
         gap: 6rem;
     }
-    .header-logo>img, .header-dotsicn>img{
+    .header-logo>img, .header-dotsicn>a>img{
         height: 1rem;
     }
 }
 @media(max-width:768px) {
     .header-btn>ul {
-        gap: 4rem;
+        gap: 0.5rem;
     }
     
 }
 @media(max-width:402px) {
     .header-btn>ul {
-        gap: 3rem;
+        gap: 0;
     }
     
 }
