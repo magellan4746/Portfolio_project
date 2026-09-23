@@ -386,7 +386,7 @@
                 <a href="#banner">Banner Design</a>
                 <a href="#product">Product Design</a>
             </div>
-            <div class="con2-popup" id="popup">
+            <div class="con2-popup layout-pc" id="popup">
                 <div class="con-title">
                     <div class="con-title-wrap">
                         <h2 class="en">Popup Designs</h2>
@@ -491,7 +491,7 @@
                     </div>
                 </div>
             </div>
-            <div class="con2-poster" id="poster">
+            <div class="con2-poster layout-pc" id="poster">
                 <div class="con-title">
                     <div class="con-title-wrap">
                         <h2 class="en">Poster Designs</h2>
@@ -550,6 +550,199 @@
                             );
 
                             const posterpSwiper = new Swiper('.con2-poster-imgs', {
+                                effect: 'fade',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,             // 3초마다 전환
+                                    disableOnInteraction: false, // 드래그한 뒤에도 자동 재생 유지
+                                    pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
+                                },
+                                navigation: {
+                                    nextEl: '.con2-poster .swiper-button-next',
+                                    prevEl: '.con2-poster .swiper-button-prev',
+                                },
+                                pagination: {
+                                    el: '.con2-imgs .swiper-pagination',
+                                    clickable: true,
+                                },
+                                on: {
+                                    slideChange: function () {
+                                        posterExplains.forEach((expl, index) => {
+                                            expl.classList.toggle('con-on', index === this.realIndex);
+                                        });
+                                    }
+                                }
+                            });
+
+                            observeSwiperAutoplay(posterpSwiper);
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="con2-popup layout-mo" id="popup">
+                <div class="con-title">
+                    <div class="con-title-wrap">
+                        <h2 class="en">Popup Designs</h2>
+                        <p class="en">Clear Messages, Designed to Engage</p>
+                    </div>
+                    <p>짧은 순간에도 핵심 메시지가 명확하게 전달될 수 있도록 정보의 우선순위와 시각적 주목도를 고려해 디자인했습니다.</p>
+                </div>
+                <div class="list-wrap">
+                    <div class="con2-list-mo">
+                        <div class="con2-slider">
+                            <div class="swiper con2-imgs con2-popup-imgs">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./img/img-popup-twosome.jpg" alt="팝업디자인이미지">
+                                    </div>
+                                    <div class="swiper-slide"><img src="./img/img-popup-oliveyoung.jpg" alt="팝업디자인이미지">
+                                    </div>
+                                    <div class="swiper-slide"><img src="./img/img-popup-nike-sale.jpg" alt="팝업디자인이미지">
+                                    </div>
+                                    <div class="swiper-slide"><img src="./img/img-popup-netflix.jpg" alt="팝업디자인이미지">
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div class="con2-expl-mo">
+                            <div class="con2-expl-wrap con-on">
+                                <h3>투썸플레이스 메뉴 팝업 디자인</h3>
+                                <p>봄 시즌 신메뉴를 홍보하는 가상의 투썸플레이스 팝업 광고입니다.
+                                    복숭아와 벚꽃을 활용한 핑크·코랄 톤의 비주얼로 계절감과 산뜻한 음료의 이미지를 표현하고, 제품과 메뉴 정보를 직관적으로 배치해 실제 프로모션 광고의
+                                    형태로 디자인했습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>올리브영 올영세일 팝업 디자인</h3>
+                                <p>올리브영의 가상 뷰티 기획전을 홍보하는 팝업 광고입니다.
+                                    골드와 옐로우 컬러를 중심으로 화사하고 프리미엄한 분위기를 연출했으며, 다양한 스킨케어 제품과 최대 50% 할인 혜택을 직관적으로 배치해 프로모션의
+                                    주목도를 높였습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>나이키 정기세일 팝업 디자인</h3>
+                                <p>가상의 나이키의 시즌 할인 프로모션을 콘셉트로 제작한 가상의 팝업 광고입니다.
+                                    블랙과 화이트 중심의 강렬한 대비와 스니커즈를 강조한 입체적인 구성을 활용했으며, 할인율과 CTA 버튼을 명확하게 배치해 상품과 프로모션 혜택을
+                                    직관적으로 전달하는 데 중점을 두었습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>넷플릭스 팝업 디자인</h3>
+                                <p>넷플릭스 오리지널 로맨스 시리즈를 콘셉트로 제작한 가상의 콘텐츠 프로모션 팝업입니다.
+                                    비 오는 밤과 우산 아래 두 인물을 중심으로 감성적인 분위기를 표현했으며, 네온 컬러와 강한 명암 대비, 손글씨 타이포그래피를 활용해 작품의 로맨틱한
+                                    이미지와 공개 정보를 효과적으로 전달하고자 했습니다.</p>
+                            </div>
+                        </div>
+                        <script>
+                            // 화면에 보이는 슬라이더만 자동 재생합니다.
+                            function observeSwiperAutoplay(swiper) {
+                                if (!swiper?.autoplay || !swiper?.el) return;
+
+                                const observer = new IntersectionObserver((entries) => {
+                                    entries.forEach((entry) => {
+                                        if (entry.isIntersecting) {
+                                            swiper.autoplay.start();
+                                        } else {
+                                            swiper.autoplay.stop();
+                                        }
+                                    });
+                                }, { threshold: 0.1 });
+
+                                observer.observe(swiper.el);
+                            }
+
+                            const popupExplainsMo = document.querySelectorAll(
+                                '.con2-popup .con2-expl-wrap'
+                            );
+
+                            const popupSwiperMo = new Swiper('.con2-popup-imgs', {
+                                effect: 'fade',
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,             // 3초마다 전환
+                                    disableOnInteraction: false, // 드래그한 뒤에도 자동 재생 유지
+                                    pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
+                                },
+                                navigation: {
+                                    nextEl: '.con2-popup .swiper-button-next',
+                                    prevEl: '.con2-popup .swiper-button-prev',
+                                },
+                                pagination: {
+                                    el: '.con2-imgs .swiper-pagination',
+                                    clickable: true,
+                                },
+                                on: {
+                                    slideChange: function () {
+                                        popupExplains.forEach((expl, index) => {
+                                            expl.classList.toggle('con-on', index === this.realIndex);
+                                        });
+                                    }
+                                }
+                            });
+
+                            observeSwiperAutoplay(popupSwiper);
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="con2-poster layout-mo" id="poster">
+                <div class="con-title">
+                    <div class="con-title-wrap">
+                        <h2 class="en">Poster Designs</h2>
+                        <p class="en">Visual Ideas, Made to Stand Out</p>
+                    </div>
+                    <p>하나의 화면 안에서 주제와 메시지가 효과적으로 전달될 수 있도록 레이아웃과 이미지, 타이포그래피의 균형을 고민했습니다.</p>
+                </div>
+                <div class="list-wrap">
+                    <div class="con2-list-mo">
+                        <div class="con2-slider">
+                            <div class="swiper con2-imgs con2-poster-imgs">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./img/img-poster-drg.jpg" alt="포스터디자인이미지"></div>
+                                    <div class="swiper-slide"><img src="./img/img-poster-shoes.jpg" alt="포스터디자인이미지">
+                                    </div>
+                                    <div class="swiper-slide"><img src="./img/img-poster-gaming_mouse.jpg"
+                                            alt="포스터디자인이미지">
+                                    </div>
+                                    <div class="swiper-slide"><img src="./img/img-poster-furniture.jpg" alt="포스터디자인이미지">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div class="con2-expl-mo">
+                            <div class="con2-expl-wrap con-on">
+                                <h3>Dr.G 제품 포스터 디자인</h3>
+                                <p>더마 코스메틱의 전문성과 미래지향적인 이미지를 표현한 가상의 Dr.G 가상 신제품 포스터입니다.
+                                    딥 블루 컬러와 물방울, 분자 구조 그래픽을 활용해 수분과 피부 장벽 케어의 이미지를 시각화했으며, 제품 중심의 강한 조명과 입체적인 구성을 통해
+                                    신제품의 프리미엄한 이미지를 강조했습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>아디다스 신발 포스터 디자인</h3>
+                                <p>아디다스의 슬로건「IMPOSSIBLE IS NOTHING」과 러닝화를 중심으로 구성한 스포츠 광고 포스터입니다.
+                                    로우 앵글과 과감한 대형 타이포그래피를 활용해 도전과 움직임의 에너지를 표현했으며, 러닝화를 전면에 강조해 브랜드 메시지와 제품의 기능적인 이미지를
+                                    동시에 전달하고자 했습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>로지텍 게이밍 마우스 포스터 디자인</h3>
+                                <p>가상의 로지텍 게이밍 마우스를 주제로 제작한 제품 광고 포스터입니다.
+                                    마젠타와 시안의 네온 컬러, 방사형 그래픽과 대형 타이포그래피를 활용해 빠른 속도감과 게이밍의 역동성을 표현했으며, 중앙의 제품을 강하게 부각해 제품의
+                                    성능과 미래지향적인 이미지를 직관적으로 전달하고자 했습니다.</p>
+                            </div>
+                            <div class="con2-expl-wrap">
+                                <h3>이케아 가구 포스터 디자인</h3>
+                                <p>이케아의 가상 라운지 체어 신제품을 주제로 제작한 가구 광고 포스터입니다.
+                                    블루와 옐로우의 강한 컬러 대비와 기하학적 레이아웃을 활용해 밝고 현대적인 분위기를 표현했으며, 제품을 중심으로 과감한 타이포그래피를 구성해 가구의
+                                    편안함과 개성 있는 라이프스타일 이미지를 효과적으로 전달하고자 했습니다.</p>
+                            </div>
+                        </div>
+                        <script>
+                            const posterExplainsMo = document.querySelectorAll(
+                                '.con2-poster .con2-expl-wrap'
+                            );
+
+                            const posterpSwiperMo = new Swiper('.con2-poster-imgs', {
                                 effect: 'fade',
                                 loop: true,
                                 autoplay: {

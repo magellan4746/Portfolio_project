@@ -329,6 +329,11 @@ body {
     width: 72%;
     margin: 0 auto;
 }
+.con2-list-mo{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .con2-product-list {
     display: flex;
@@ -580,6 +585,16 @@ body {
     align-items: center;
     text-align: left;
 }
+.con2-expl-mo{
+    display: grid;
+    padding: 3rem;
+}
+.con2-expl-mo > .con2-expl-wrap {
+    display: none;
+}
+.con2-expl-mo > .con2-expl-wrap.con-on {
+    display: flex;
+}
 
 .con2-page-list {
     display: flex;
@@ -712,6 +727,10 @@ body {
 .con4-list h1 {
     padding-top: 5rem;
     font-size: 5rem;
+    text-align: center;
+}
+.con4-list h3{
+    padding: 0 2rem;
     text-align: center;
 }
 
@@ -869,6 +888,7 @@ body {
 
 
     .con3-list {
+        flex-direction: column;
         gap: 3rem;
         padding: 0 2rem;
     }
