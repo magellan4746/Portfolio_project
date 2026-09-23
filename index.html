@@ -458,10 +458,10 @@
                             }
 
                             const popupExplains = document.querySelectorAll(
-                                '.con2-popup .con2-expl-wrap'
+                                '.con2-popup.layout-pc .con2-expl-wrap'
                             );
 
-                            const popupSwiper = new Swiper('.con2-popup-imgs', {
+                            const popupSwiper = new Swiper('.con2-popup.layout-pc .con2-popup-imgs', {
                                 effect: 'fade',
                                 loop: true,
                                 autoplay: {
@@ -470,11 +470,11 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-popup .swiper-button-next',
-                                    prevEl: '.con2-popup .swiper-button-prev',
+                                    nextEl: '.con2-popup.layout-pc .swiper-button-next',
+                                    prevEl: '.con2-popup.layout-pc .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-imgs .swiper-pagination',
+                                    el: '.con2-popup.layout-pc .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
@@ -546,10 +546,10 @@
                         </div>
                         <script>
                             const posterExplains = document.querySelectorAll(
-                                '.con2-poster .con2-expl-wrap'
+                                '.con2-poster.layout-pc .con2-expl-wrap'
                             );
 
-                            const posterpSwiper = new Swiper('.con2-poster-imgs', {
+                            const posterpSwiper = new Swiper('.con2-poster.layout-pc .con2-poster-imgs', {
                                 effect: 'fade',
                                 loop: true,
                                 autoplay: {
@@ -558,11 +558,11 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-poster .swiper-button-next',
-                                    prevEl: '.con2-poster .swiper-button-prev',
+                                    nextEl: '.con2-poster.layout-pc .swiper-button-next',
+                                    prevEl: '.con2-poster.layout-pc .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-imgs .swiper-pagination',
+                                    el: '.con2-poster.layout-pc .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
@@ -600,8 +600,8 @@
                                     </div>
                                     <div class="swiper-slide"><img src="./img/img-popup-netflix.jpg" alt="팝업디자인이미지">
                                     </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
+                                    </div>
+                                <div class="swiper-pagination"></div>
                             </div>
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -651,10 +651,10 @@
                             }
 
                             const popupExplainsMo = document.querySelectorAll(
-                                '.con2-popup .con2-expl-wrap'
+                                '.con2-popup.layout-mo .con2-expl-wrap'
                             );
 
-                            const popupSwiperMo = new Swiper('.con2-popup-imgs', {
+                            const popupSwiperMo = new Swiper('.con2-popup.layout-mo .con2-popup-imgs', {
                                 effect: 'fade',
                                 loop: true,
                                 autoplay: {
@@ -663,23 +663,23 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-popup .swiper-button-next',
-                                    prevEl: '.con2-popup .swiper-button-prev',
+                                    nextEl: '.con2-popup.layout-mo .swiper-button-next',
+                                    prevEl: '.con2-popup.layout-mo .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-imgs .swiper-pagination',
+                                    el: '.con2-popup.layout-mo .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
                                     slideChange: function () {
-                                        popupExplains.forEach((expl, index) => {
+                                        popupExplainsMo.forEach((expl, index) => {
                                             expl.classList.toggle('con-on', index === this.realIndex);
                                         });
                                     }
                                 }
                             });
 
-                            observeSwiperAutoplay(popupSwiper);
+                            observeSwiperAutoplay(popupSwiperMo);
                         </script>
                     </div>
                 </div>
@@ -739,10 +739,10 @@
                         </div>
                         <script>
                             const posterExplainsMo = document.querySelectorAll(
-                                '.con2-poster .con2-expl-wrap'
+                                '.con2-poster.layout-mo .con2-expl-wrap'
                             );
 
-                            const posterpSwiperMo = new Swiper('.con2-poster-imgs', {
+                            const posterpSwiperMo = new Swiper('.con2-poster.layout-mo .con2-poster-imgs', {
                                 effect: 'fade',
                                 loop: true,
                                 autoplay: {
@@ -751,23 +751,23 @@
                                     pauseOnMouseEnter: true  // 마우스를 올리면 일시 정지
                                 },
                                 navigation: {
-                                    nextEl: '.con2-poster .swiper-button-next',
-                                    prevEl: '.con2-poster .swiper-button-prev',
+                                    nextEl: '.con2-poster.layout-mo .swiper-button-next',
+                                    prevEl: '.con2-poster.layout-mo .swiper-button-prev',
                                 },
                                 pagination: {
-                                    el: '.con2-imgs .swiper-pagination',
+                                    el: '.con2-poster.layout-mo .swiper-pagination',
                                     clickable: true,
                                 },
                                 on: {
                                     slideChange: function () {
-                                        posterExplains.forEach((expl, index) => {
+                                        posterExplainsMo.forEach((expl, index) => {
                                             expl.classList.toggle('con-on', index === this.realIndex);
                                         });
                                     }
                                 }
                             });
 
-                            observeSwiperAutoplay(posterpSwiper);
+                            observeSwiperAutoplay(posterpSwiperMo);
                         </script>
                     </div>
                 </div>
