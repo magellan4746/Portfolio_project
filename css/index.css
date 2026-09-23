@@ -659,8 +659,9 @@ body {
 }
 
 .con3-expl-wrap {
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .con3-expl {
@@ -670,7 +671,7 @@ body {
 .project-cap-wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.2rem;
 }
 
 .project-cap-dl {
