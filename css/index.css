@@ -291,11 +291,10 @@ body {
     box-sizing: border-box;
     margin-top: 0.5rem;
     padding: 0.4rem 2rem;
-    background-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 255, 255);
     border: 1px solid rgb(73, 74, 85);
     border-radius: 500px;
     text-align: center;
-    backdrop-filter: blur(2px);
 }
 
 .con2>[id],
