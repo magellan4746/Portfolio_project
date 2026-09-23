@@ -205,7 +205,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
-    
+
 }
 
 .con1-text-sub h4 {
@@ -653,7 +653,7 @@ body {
 
 .con3-list {
     display: flex;
-    gap: 10rem;
+    gap: 5rem;
     padding: 0 3rem;
     align-items: center;
     justify-content: center;
@@ -676,8 +676,8 @@ body {
 
 .project-cap-dl {
     display: grid;
-    grid-template-columns: 0.2fr 1fr;
-    gap: 0.5rem 1.5rem;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 1rem 2.5rem;
 }
 
 .con3-img {
@@ -869,6 +869,10 @@ body {
     .con3-list {
         gap: 3rem;
         padding: 0 2rem;
+    }
+
+    .project-cap-dl {
+        gap: 0.8rem 1.8rem;
     }
 
 
