@@ -112,7 +112,7 @@ body {
 
 
 .l-title {
-    padding: 5rem 3rem 1.5rem;
+    padding: 5rem 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -166,8 +166,8 @@ body {
 
 .con1-about-me>h2 {
     text-align: left;
-    font-weight: var(--fw2);
-    font-size: 2rem;
+    font-weight: var(--fw1);
+    font-size: 0.8rem;
 }
 
 .con1-text-main {
@@ -188,7 +188,7 @@ body {
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
 }
 
 .text-contain-right>h3 {
@@ -242,6 +242,10 @@ body {
     font-weight: var(--fw1);
 }
 
+.con1-skill-card-botom ul {
+    list-style: inside;
+}
+
 
 .con-title {
     display: flex;
@@ -257,7 +261,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
 }
 
 .con-title-wrap>p {
@@ -276,7 +280,6 @@ body {
 }
 
 .btn-shortcut a {
-    flex: 1;
     min-width: 0;
     box-sizing: border-box;
     margin-top: 0.5rem;
@@ -589,6 +592,12 @@ body {
     gap: 3rem;
 }
 
+.project-cap-dl {
+    display: grid;
+    grid-template-columns:  0.2fr 1fr;
+    gap: 0.5rem 0.5rem;
+}
+
 .con3-img a {
     display: flex;
     flex-direction: column;
@@ -687,7 +696,7 @@ body {
     }
 }
 
-@media(max-width:940px){
+@media(max-width:940px) {
     .btn-shortcut {
         margin-inline: 6rem;
     }
@@ -765,6 +774,7 @@ body {
     .con2-page-list a>img {
         width: initial;
     }
+
     .btn-shortcut {
         margin-inline: 1rem;
     }
