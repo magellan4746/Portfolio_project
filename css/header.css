@@ -67,8 +67,8 @@
 }
 
 .header-dotsicn > a {
-    padding-inline: 1rem;
     min-width: 48px;
+    gap: 1rem;
 }
 
 .header-logo img,

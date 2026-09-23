@@ -84,9 +84,11 @@ body {
 }
 
 .swiper {
+    position: relative;
     width: 100%;
+    max-width: 800px;
     height: 100%;
-    --swiper-navigation-color: #fff;
+    --swiper-navigation-color: #333;
     /* 이전/다음 화살표 */
     --swiper-pagination-color: #fff;
     /* 활성 pagination bullet */
@@ -427,20 +429,54 @@ body {
     }
 }
 
+.con2-slider {
+    --image-max-width: 333.333px;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: calc(var(--image-max-width) + 88px + 1rem);
+    min-width: 0;
+    margin-inline: auto;
+}
+
+.con2-banner .con2-slider {
+    --image-max-width: 989.691px;
+}
+
 .con2-imgs {
+    grid-column: 2;
+    grid-row: 1;
     position: relative;
     overflow: hidden;
+    min-width: 0;
     height: auto;
 }
 
-.con2-imgs .swiper-button-next,
-.con2-imgs .swiper-button-prev {
-    width: 2rem;
-    height: 2rem;
+.con2-slider>.swiper-button-next,
+.con2-slider>.swiper-button-prev {
+    --swiper-navigation-color: #333;
+    color: #333;
+    position: static;
+    grid-row: 1;
+    margin: 0;
+    transform: none;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.con2-imgs .swiper-button-next::after,
-.con2-imgs .swiper-button-prev::after {
+.con2-slider>.swiper-button-next svg,
+.con2-slider>.swiper-button-prev svg {
+    color: #333;
+    fill: currentColor;
+}
+
+.con2-slider>.swiper-button-next::after,
+.con2-slider>.swiper-button-prev::after {
     font-size: 1.25rem;
 }
 
@@ -454,12 +490,12 @@ body {
     border-radius: 99px;
 }
 
-.con2-imgs .swiper-button-prev {
-    left: 1rem;
+.con2-slider>.swiper-button-prev {
+    grid-column: 1;
 }
 
-.con2-imgs .swiper-button-next {
-    right: 1rem;
+.con2-slider>.swiper-button-next {
+    grid-column: 3;
 }
 
 /* 이미지 영역 하단 중앙 */
@@ -469,8 +505,8 @@ body {
 
 .con2-imgs .swiper-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .con2-imgs img {
@@ -531,6 +567,7 @@ body {
 .con2-page-list>li>a>img {
     display: block;
     transition: transform 0.35s ease;
+    max-height: 600px;
 }
 
 .con2-page-list>li>a::after {
@@ -594,7 +631,7 @@ body {
 
 .project-cap-dl {
     display: grid;
-    grid-template-columns:  0.2fr 1fr;
+    grid-template-columns: 0.2fr 1fr;
     gap: 0.5rem 0.5rem;
 }
 
@@ -705,6 +742,10 @@ body {
 
 @media(max-width:768px) {
 
+    .con2-list {
+        width: 100%;
+    }
+
     .con-title {
         margin-bottom: 0.5rem;
         padding: 0 1rem;
@@ -732,7 +773,6 @@ body {
     }
 
     .con1-card-wrap {
-        grid-template-columns: repeat(1, 1fr);
         gap: 4rem;
     }
 
@@ -751,10 +791,12 @@ body {
         width: 350px;
     }
 
+
     .con3-list {
         gap: 3rem;
         padding: 0 2rem;
     }
+
 
 }
 
