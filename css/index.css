@@ -86,7 +86,7 @@ body {
 .swiper {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    /* max-width: 800px; */
     height: 100%;
     --swiper-navigation-color: #333;
     /* 이전/다음 화살표 */
@@ -135,6 +135,9 @@ body {
 
 }
 
+.con1-text-sub-title{
+    padding: 3rem 0;
+}
 .con1 {
     display: flex;
     align-items: flex-start;
@@ -318,12 +321,30 @@ body {
 
 .con2-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
     gap: 2rem;
     align-items: center;
     justify-content: center;
     width: 72%;
     margin: 0 auto;
+}
+
+.con2-product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.con2-product-caption {
+    text-align: center;
+}
+
+.con2-product-imgs .swiper-slide>a {
+    display: block;
 }
 
 .list-wrap {
@@ -441,6 +462,13 @@ body {
     margin-inline: auto;
 }
 
+.con2-product-slider {
+    gap: 0.5rem;
+    width: 100%;
+
+    margin-inline: auto;
+}
+
 .con2-banner .con2-slider {
     --image-max-width: 989.691px;
 }
@@ -452,6 +480,10 @@ body {
     overflow: hidden;
     min-width: 0;
     height: auto;
+}
+
+.con2-banner-imgs {
+    max-height: 600px;
 }
 
 .con2-slider>.swiper-button-next,
@@ -609,18 +641,28 @@ body {
     }
 }
 
+.layout-pc {
+    display: block;
+}
+
+.layout-mo {
+    display: none;
+}
+
 .con3-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    gap: 10rem;
     padding: 0 3rem;
     align-items: center;
+    justify-content: center;
 }
 
 .con3-expl-wrap {
-    display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+.con3-expl{
+    flex: 0.5;
 }
 
 .project-cap-wrap {
@@ -632,9 +674,17 @@ body {
 .project-cap-dl {
     display: grid;
     grid-template-columns: 0.2fr 1fr;
-    gap: 0.5rem 0.5rem;
+    gap: 0.5rem 1.5rem;
 }
 
+.con3-img{
+    flex: 0.5;
+    max-width: 25rem;
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(51, 51, 51, 0.438);
+}
 .con3-img a {
     display: flex;
     flex-direction: column;
@@ -789,6 +839,14 @@ body {
 
     .con2-page-list a>img {
         width: 350px;
+    }
+
+    .layout-pc {
+        display: none;
+    }
+
+    .layout-mo {
+        display: block;
     }
 
 
