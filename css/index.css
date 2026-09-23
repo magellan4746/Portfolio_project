@@ -554,8 +554,42 @@ body {
     gap: 2rem;
     align-items: center;
 }
-
-
+.con4-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 0;
+    align-items: center;
+    background-color: rgba(49, 49, 49, 0.63);
+    backdrop-filter: blur(1px);
+    color: #fff;
+}
+.con4-address{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.con4-address-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+.con4-address-list > li{
+    min-width: 0;
+}
+.con4-address-list a{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    overflow-wrap: anywhere;
+    background-color: rgba(49, 49, 49, 0.521);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 500px;
+    text-align: center;
+}
 @media(max-width:1024px) {
     .con1-profile {
         position: sticky;
