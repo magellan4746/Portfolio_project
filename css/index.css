@@ -308,7 +308,7 @@ body {
     }
 
     .btn-shortcut a {
-        padding: 0.6rem 0.4rem;
+        padding: 0.6rem 1rem;
         overflow-wrap: anywhere;
     }
 }
