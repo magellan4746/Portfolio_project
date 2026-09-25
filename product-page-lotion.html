@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로션 상세페이지</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/deco.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/product.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/deco.js" defer></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <!-- 스크롤과 함께 밀도가 바뀌는 고정 장식 레이어 -->
+    <div class="cyber-backdrop" aria-hidden="true">
+        <div class="cyber-grid"></div>
+        <p class="cyber-code code-top js-cycling-code" data-code-group="system">// SYSTEM : ONLINE&nbsp;&nbsp;
+            01.01.0101</p>
+        <p class="cyber-code code-side js-cycling-code" data-code-group="interface">NEON_INTERFACE / PORTFOLIO / 2024
+        </p>
+        <p class="cyber-code code-bottom js-cycling-code" data-code-group="signal">[ VISUAL_SIGNAL ] &nbsp; 00FFFC
+            &nbsp; // SYNCHRONIZED</p>
+        <p class="cyber-code code-center code-center--one js-cycling-code" data-code-group="ambient">// RENDER_PIPELINE
+            : INITIALIZED</p>
+        <p class="cyber-code code-center code-center--two js-cycling-code" data-code-group="ambient">0x0F / VISUAL_NODE
+            / STANDBY</p>
+        <p class="cyber-code code-center code-center--three js-cycling-code" data-code-group="ambient">GRID[12:08] ::
+            SIGNAL DETECTED</p>
+        <p class="cyber-code code-center code-center--four js-cycling-code" data-code-group="ambient">MODULE.DESIGN /
+            FRAME_READY</p>
+        <p class="cyber-code code-center code-center--five js-cycling-code" data-code-group="ambient">// DATA_LINK :
+            2048kb/s</p>
+        <p class="cyber-code code-center code-center--six js-cycling-code" data-code-group="ambient">CORE::AESTHETIC /
+            SYNC_100</p>
+        <p class="cyber-code code-center code-center--seven js-cycling-code" data-code-group="ambient">[ RX-07 ] CHANNEL
+            OPEN</p>
+        <span class="cyber-ring ring-one"></span>
+        <span class="cyber-ring ring-two"></span>
+        <span class="cyber-line line-one"></span>
+        <span class="cyber-line line-two"></span>
+        <span class="cyber-square square-one"></span>
+        <span class="cyber-square square-two"></span>
+        <span class="cyber-cross cross-one">+</span>
+    </div>
+    <!-- 맨 위로 가는 버튼 -->
+    <button class="scl-top-btn" type="button" aria-label="맨 위로 이동" disabled>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+    <main>
+        <section class="product-page">
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>01. CONCEPT 컨셉 설정</h2>
+                    <h4>피부의 편안한 균형을 시각화하다</h4>
+                    <p>뉴트럴 컬러와 여백을 활용해 NUVORA가 추구하는 깨끗하고 편안한 브랜드 이미지를 표현했습니다.</p>
+                </div>
+            </div>
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>02. HERO 제품 강조</h2>
+                    <h4>제품의 첫인상을 부드럽고 명확하게</h4>
+                    <p>제품을 중심으로 자연스러운 빛과 오브제를 배치해 로션의 깨끗하고 프리미엄한 이미지를 강조했습니다.</p>
+                </div>
+            </div>
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>03. HYDRATE 수분감 표현</h2>
+                    <h4>촉촉함을 시각적으로 전달하다</h4>
+                    <p>수분과 텍스처를 연상시키는 비주얼을 활용해 제품의 보습 기능을 직관적으로 표현했습니다.</p>
+                </div>
+            </div>
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>04. RESTORE 핵심 가치</h2>
+                    <h4>피부의 균형에 집중한 메시지</h4>
+                    <p>피부 이미지와 간결한 카피를 조합해 매일 사용하는 데일리 케어 제품의 특징을 전달했습니다.</p>
+                </div>
+            </div>
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>05. LIGHT & COMFORT 사용감</h2>
+                    <h4>가볍고 편안한 사용감을 보여주다</h4>
+                    <p>실제 로션을 사용하는 장면을 통해 부드러운 발림성과 일상적인 사용 경험을 자연스럽게 표현했습니다.</p>
+                </div>
+            </div>
+            <div class="con-title">
+                <div class="con-title-wrap">
+                    <h2>06. FINAL 구매 연결</h2>
+                    <h4>브랜드 경험에서 제품 정보까지 자연스럽게</h4>
+                    <p>제품의 핵심 가치와 상세 정보를 정돈된 레이아웃으로 구성해 구매까지 자연스럽게 이어지도록 디자인했습니다.</p>
+                </div>
+            </div>
+            <div class="list-wrap">
+                <div class="product-img">
+                    <img src="./img/img-ppd-lotion.jpg" alt="로션 상세페이지">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
