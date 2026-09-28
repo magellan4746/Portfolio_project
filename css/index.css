@@ -696,6 +696,9 @@ body {
     grid-template-columns: 0.4fr 1fr;
     gap: 1rem 2.5rem;
 }
+.project-cap-dl dt{
+    font-weight: var(--fw2);
+}
 
 .con3-img {
     flex: 0.5;
