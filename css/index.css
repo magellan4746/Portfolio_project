@@ -693,11 +693,13 @@ body {
 
 .project-cap-dl {
     display: grid;
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 0.38fr 1fr;
     gap: 1rem 2.5rem;
+    
 }
 .project-cap-dl dt{
     font-weight: var(--fw2);
+    white-space: nowrap;
 }
 
 .con3-img {
