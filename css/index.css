@@ -724,7 +724,7 @@ body {
     gap: 2rem;
     padding: 5rem 0;
     align-items: center;
-    background-color: rgba(49, 49, 49, 0.63);
+    background-color: rgba(49, 49, 49);
     backdrop-filter: blur(1px);
     color: #fff;
 }

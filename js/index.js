@@ -2,17 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollTopButton = document.querySelector('.scl-top-btn');
     const heroBanner = document.querySelector('.hero-banner');
 
-    if (scrollTopButton && heroBanner) {
+    const productPage = document.querySelector('.product-page');
+    if (scrollTopButton && (heroBanner || productPage)) {
+        const mobileViewport = window.matchMedia('(max-width: 768px)');
+        const tabletViewport = window.matchMedia('(max-width: 1024px)');
         const updateScrollTopButton = () => {
-            const isPastHero = heroBanner.getBoundingClientRect().bottom <= 0;
-            scrollTopButton.classList.toggle('is-active', isPastHero);
-            scrollTopButton.disabled = !isPastHero;
+            const threshold = mobileViewport.matches ? 874 : tabletViewport.matches ? 1366 : 1020;
+            const isVisible = productPage
+                ? window.scrollY > threshold
+                : heroBanner.getBoundingClientRect().bottom <= 0;
+            scrollTopButton.classList.toggle('is-active', isVisible);
+            scrollTopButton.disabled = !isVisible;
         };
 
-        const heroObserver = new IntersectionObserver(updateScrollTopButton, {
-            threshold: 0
-        });
-        heroObserver.observe(heroBanner);
+        if (productPage) {
+            window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+            mobileViewport.addEventListener('change', updateScrollTopButton);
+            tabletViewport.addEventListener('change', updateScrollTopButton);
+        } else {
+            const heroObserver = new IntersectionObserver(updateScrollTopButton, {
+                threshold: 0
+            });
+            heroObserver.observe(heroBanner);
+        }
         window.addEventListener('pageshow', updateScrollTopButton);
         updateScrollTopButton();
 
@@ -148,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     syncCyclingCodes();
 
     const sections = document.querySelectorAll(
-        '.l-title, .con1-profile, .con1-about-me > h2, .list-wrap, .con-title-wrap, .text-contain-left, .text-contain-right, .con1-text-sub, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page, .con3, .con3-shopping-mall, .con3-team-project, .btn-shortcut'
+        '.l-title, .con1-profile, .con1-about-me > h2, .list-wrap, .con-title-wrap, .text-contain-left, .text-contain-right, .con1-text-sub, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page, .con3, .con3-shopping-mall, .con3-team-project, .con4-list, .con4-list > figure, .con4-list > h3, .con4-address, .con4-address-list, .btn-shortcut, .en'
     );
 
     // 각 작업 블록이 화면에 들어오면 왼쪽에서 나타나고, 벗어나면 다시 왼쪽으로 사라집니다.
