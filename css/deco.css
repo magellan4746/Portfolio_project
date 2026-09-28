@@ -1,3 +1,9 @@
+.hero-banner.is-decoration-paused *,
+.hero-banner.is-decoration-paused *::before,
+.hero-banner.is-decoration-paused *::after {
+    animation-play-state: paused !important;
+}
+
 .hero-banner>.en {
     display: flex;
     justify-content: center;

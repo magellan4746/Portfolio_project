@@ -20,8 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentX = 0;
     let currentY = 0;
     let frameId;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const renderParallax = () => {
+        if (hero.classList.contains('is-decoration-paused') || reducedMotion.matches || document.hidden || !document.hasFocus()) {
+            frameId = undefined;
+            return;
+        }
         currentX += (targetX - currentX) * 0.075;
         currentY += (targetY - currentY) * 0.075;
 
@@ -42,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateParallax = ({ clientX, clientY }) => {
+        if (hero.classList.contains('is-decoration-paused') || reducedMotion.matches || document.hidden || !document.hasFocus()) return;
         targetX = (clientX / window.innerWidth - 0.5) * 2;
         targetY = (clientY / window.innerHeight - 0.5) * 2;
         if (!frameId) frameId = requestAnimationFrame(renderParallax);

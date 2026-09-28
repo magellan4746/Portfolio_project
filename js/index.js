@@ -55,25 +55,43 @@ document.addEventListener('DOMContentLoaded', () => {
     addCodeTarget('.hero-status span', 'status');
 
     let codeStep = 0;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let codeIntervalId = null;
+    const typingTasks = new Map();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileLayout = window.matchMedia('(max-width: 768px), (pointer: coarse)');
+    let heroVisible = true;
+    const cancelTyping = (element) => {
+        const task = typingTasks.get(element);
+        if (!task) return;
+        window.clearTimeout(task.timeoutId);
+        // 중단할 때 문구를 완성해 잘린 텍스트와 커서가 남지 않게 한다.
+        element.textContent = task.value;
+        element.classList.remove('is-typing');
+        typingTasks.delete(element);
+    };
     const typeCode = (element, value, delay) => {
-        window.setTimeout(() => {
-            if (prefersReducedMotion) {
-                element.textContent = value;
-                return;
-            }
-
+        cancelTyping(element);
+        if (mobileLayout.matches || reducedMotion.matches) {
+            element.textContent = value;
+            return;
+        }
+        const task = { value, timeoutId: null };
+        typingTasks.set(element, task);
+        task.timeoutId = window.setTimeout(() => {
+            if (typingTasks.get(element) !== task) return;
             let characterIndex = 0;
             element.textContent = '';
             element.classList.add('is-typing');
 
             const typeNextCharacter = () => {
-                element.textContent += value[characterIndex];
+                if (typingTasks.get(element) !== task) return;
                 characterIndex += 1;
+                element.textContent = value.slice(0, characterIndex);
                 if (characterIndex < value.length) {
-                    window.setTimeout(typeNextCharacter, 22);
+                    task.timeoutId = window.setTimeout(typeNextCharacter, 22);
                 } else {
                     element.classList.remove('is-typing');
+                    typingTasks.delete(element);
                 }
             };
 
@@ -82,14 +100,52 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateCyclingCodes = () => {
+        if (document.hidden || !document.hasFocus() || reducedMotion.matches) return;
         codeStep += 1;
         codeTargets.forEach(({ element, group }, index) => {
+            if (!heroVisible && heroBanner?.contains(element)) return;
             const values = codeSets[group];
             if (!values) return;
             typeCode(element, values[(codeStep + index) % values.length], index * 85);
         });
     };
-    window.setInterval(updateCyclingCodes, 6200);
+    const stopCyclingCodes = () => {
+        window.clearInterval(codeIntervalId);
+        codeIntervalId = null;
+        for (const element of typingTasks.keys()) cancelTyping(element);
+    };
+    const syncCyclingCodes = () => {
+        if (document.hidden || !document.hasFocus() || reducedMotion.matches) {
+            stopCyclingCodes();
+            return;
+        }
+        // focus와 visibilitychange가 연이어 발생해도 하나만 실행한다.
+        if (codeIntervalId === null) {
+            codeIntervalId = window.setInterval(updateCyclingCodes, 6200);
+        }
+    };
+    document.addEventListener('visibilitychange', syncCyclingCodes);
+    window.addEventListener('blur', stopCyclingCodes);
+    window.addEventListener('focus', syncCyclingCodes);
+    window.addEventListener('pagehide', stopCyclingCodes);
+    window.addEventListener('pageshow', syncCyclingCodes);
+    reducedMotion.addEventListener('change', syncCyclingCodes);
+    mobileLayout.addEventListener('change', () => {
+        for (const element of typingTasks.keys()) cancelTyping(element);
+    });
+    if (heroBanner) {
+        const decorationObserver = new IntersectionObserver(([entry]) => {
+            heroVisible = entry.isIntersecting;
+            heroBanner.classList.toggle('is-decoration-paused', !heroVisible);
+            if (!heroVisible) {
+                for (const element of typingTasks.keys()) {
+                    if (heroBanner.contains(element)) cancelTyping(element);
+                }
+            }
+        }, { threshold: 0 });
+        decorationObserver.observe(heroBanner);
+    }
+    syncCyclingCodes();
 
     const sections = document.querySelectorAll(
         '.l-title, .con1-profile, .con1-about-me > h2, .list-wrap, .text-contain-left, .text-contain-right, .con1-text-sub, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page, .con3, .con3-shopping-mall, .con3-team-project, .btn-shortcut'
@@ -142,7 +198,25 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         updateCode();
-        window.setInterval(updateCode, 2400);
+        let hologramIntervalId = null;
+        const stopHologramCode = () => {
+            window.clearInterval(hologramIntervalId);
+            hologramIntervalId = null;
+        };
+        const syncHologramCode = () => {
+            if (document.hidden || !document.hasFocus() || reducedMotion.matches) {
+                stopHologramCode();
+            } else if (hologramIntervalId === null) {
+                hologramIntervalId = window.setInterval(updateCode, 2400);
+            }
+        };
+        reducedMotion.addEventListener('change', syncHologramCode);
+        document.addEventListener('visibilitychange', syncHologramCode);
+        window.addEventListener('blur', stopHologramCode);
+        window.addEventListener('focus', syncHologramCode);
+        window.addEventListener('pagehide', stopHologramCode);
+        window.addEventListener('pageshow', syncHologramCode);
+        syncHologramCode();
 
         if (!window.matchMedia('(pointer: fine)').matches) return;
 
