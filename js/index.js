@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     syncCyclingCodes();
 
     const sections = document.querySelectorAll(
-        '.l-title, .con1-profile, .con1-about-me > h2, .list-wrap, .text-contain-left, .text-contain-right, .con1-text-sub, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page, .con3, .con3-shopping-mall, .con3-team-project, .btn-shortcut'
+        '.l-title, .con1-profile, .con1-about-me > h2, .list-wrap, .con-title-wrap, .text-contain-left, .text-contain-right, .con1-text-sub, .con1-skill-card, .con2-popup, .con2-poster, .con2-banner, .con2-product-page, .con3, .con3-shopping-mall, .con3-team-project, .btn-shortcut'
     );
 
     // 각 작업 블록이 화면에 들어오면 왼쪽에서 나타나고, 벗어나면 다시 왼쪽으로 사라집니다.
