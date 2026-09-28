@@ -294,6 +294,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-inline: 10rem;
+    margin-bottom: 8rem;
 }
 
 .btn-shortcut a {
