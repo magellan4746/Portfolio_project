@@ -357,6 +357,9 @@ body {
 }
 
 .con2-product-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     text-align: center;
 }
 
@@ -614,7 +617,8 @@ body {
     gap: 2rem;
 }
 
-.con2-page-list>li>h4 {
+.con2-page-list>li>h4,
+.con2-page-list>li>p{
     text-align: center;
     margin-bottom: 1rem;
 }
