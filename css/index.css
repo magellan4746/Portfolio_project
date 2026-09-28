@@ -134,6 +134,19 @@ body {
     text-align: center;
 
 }
+.design-resume-wrap{
+    
+}
+.design-resume{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.design-resume img{
+    max-height: 1200px;
+}
+
 
 .con1-text-sub-title {
     padding: 3rem 0;
@@ -768,6 +781,7 @@ body {
     border-radius: 500px;
     text-align: center;
 }
+
 
 @media(max-width:1024px) {
     .con1-profile {
