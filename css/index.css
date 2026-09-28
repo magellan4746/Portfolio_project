@@ -712,7 +712,9 @@ body {
     font-weight: var(--fw2);
     white-space: nowrap;
 }
-
+.con3-cap{
+    margin-top: 10rem;
+}
 .con3-img {
     flex: 0.5;
     max-width: 25rem;
