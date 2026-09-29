@@ -2,23 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollTopButton = document.querySelector('.scl-top-btn');
     const heroBanner = document.querySelector('.hero-banner');
 
-    const productPage = document.querySelector('.product-page');
-    if (scrollTopButton && (heroBanner || productPage)) {
-        const mobileViewport = window.matchMedia('(max-width: 768px)');
-        const tabletViewport = window.matchMedia('(max-width: 1024px)');
+    const productTitle = document.querySelector('.product-page .ppd-title-wrap');
+    if (scrollTopButton && (heroBanner || productTitle)) {
         const updateScrollTopButton = () => {
-            const threshold = mobileViewport.matches ? 874 : tabletViewport.matches ? 1366 : 1020;
-            const isVisible = productPage
-                ? window.scrollY > threshold
+            const isVisible = productTitle
+                ? productTitle.getBoundingClientRect().bottom <= 0
                 : heroBanner.getBoundingClientRect().bottom <= 0;
             scrollTopButton.classList.toggle('is-active', isVisible);
             scrollTopButton.disabled = !isVisible;
         };
 
-        if (productPage) {
+        if (productTitle) {
             window.addEventListener('scroll', updateScrollTopButton, { passive: true });
-            mobileViewport.addEventListener('change', updateScrollTopButton);
-            tabletViewport.addEventListener('change', updateScrollTopButton);
+            window.addEventListener('resize', updateScrollTopButton);
         } else {
             const heroObserver = new IntersectionObserver(updateScrollTopButton, {
                 threshold: 0
