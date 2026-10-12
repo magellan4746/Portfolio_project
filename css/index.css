@@ -297,7 +297,8 @@ body {
     margin-bottom: 8rem;
 }
 
-.btn-shortcut a {
+.btn-shortcut a
+{
     min-width: 0;
     box-sizing: border-box;
     margin-top: 0.5rem;
@@ -318,7 +319,8 @@ body {
         gap: 0.5rem;
     }
 
-    .btn-shortcut a {
+    .btn-shortcut a,
+    .btn-undo a {
         padding: 0.6rem 1rem;
         overflow-wrap: anywhere;
     }

@@ -4,6 +4,28 @@
     filter: saturate(.65);
 }
 
+.btn-undo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1rem;
+    margin-top: 7rem;
+}
+.btn-undo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    padding: 0.4rem 2rem;
+    background-color: rgba(255, 255, 255);
+    border: 1px solid rgb(73, 74, 85);
+    border-radius: 500px;
+    text-align: center;
+}
+
 .product-img{
     display: flex;
     flex-direction: column;
@@ -16,7 +38,7 @@
 }
 
 .ppd-title-wrap{
-    margin-top: 7rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 5rem;
