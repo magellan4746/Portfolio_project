@@ -135,12 +135,13 @@ body {
 
 }
 
-.design-resume{
+.design-resume {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.design-resume img{
+
+.design-resume img {
     max-height: 1200px;
 }
 
@@ -297,8 +298,7 @@ body {
     margin-bottom: 8rem;
 }
 
-.btn-shortcut a
-{
+.btn-shortcut a {
     min-width: 0;
     box-sizing: border-box;
     margin-top: 0.5rem;
@@ -342,7 +342,8 @@ body {
     width: 72%;
     margin: 0 auto;
 }
-.con2-list-mo{
+
+.con2-list-mo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -601,14 +602,17 @@ body {
     align-items: center;
     text-align: left;
 }
-.con2-expl-mo{
+
+.con2-expl-mo {
     display: grid;
     padding: 3rem;
 }
-.con2-expl-mo > .con2-expl-wrap {
+
+.con2-expl-mo>.con2-expl-wrap {
     display: none;
 }
-.con2-expl-mo > .con2-expl-wrap.con-on {
+
+.con2-expl-mo>.con2-expl-wrap.con-on {
     display: flex;
 }
 
@@ -620,7 +624,7 @@ body {
 }
 
 .con2-page-list>li>h4,
-.con2-page-list>li>p{
+.con2-page-list>li>p {
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -712,16 +716,24 @@ body {
     display: grid;
     grid-template-columns: 0.38fr 1fr;
     gap: 1rem 2.5rem;
-    
+
 }
-.project-cap-dl dt{
+
+.project-cap-dl dt {
     font-weight: var(--fw2);
     white-space: nowrap;
 }
-.con3-cap{
+
+.con3-cap {
     margin-top: 10rem;
 }
+
 .con3-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
     flex: 0.5;
     max-width: 25rem;
     padding: 3rem;
@@ -753,7 +765,8 @@ body {
     font-size: 5rem;
     text-align: center;
 }
-.con4-list h3{
+
+.con4-list h3 {
     padding: 0 2rem;
     text-align: center;
 }
